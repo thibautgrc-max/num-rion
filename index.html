@@ -296,6 +296,7 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
       <div id="erreurSimu" class="error" role="alert"></div>
     </form>
 
+    <!-- ===== Résultats (version simplifiée avec total) ===== -->
     <section id="resultatsBloc" aria-live="polite" aria-atomic="true"
              style="margin-top:2rem;display:none;grid-template-columns:1fr;gap:1rem;max-width:780px">
       <div class="card" style="background:var(--c-soft)">
@@ -303,24 +304,28 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
         <div style="font-size:1rem;font-weight:800"><span id="perteInflationEuro">-</span> €</div>
         <div class="small muted" style="margin-top:0.4rem">Votre trésorerie a perdu <span id="perteInflationPct">-</span> % de pouvoir d’achat réel.</div>
       </div>
+
       <div class="card">
         <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem">Valeur projetée de la poche stratégique</div>
         <div style="font-size:1rem;font-weight:800"><span id="valeurPoche">-</span> €</div>
         <div class="small muted" style="margin-top:0.4rem">Basé sur <span id="allocationPctResult">-</span> % d’allocation et <span id="perfPctResult">-</span> % de performance annuelle.</div>
       </div>
+
       <div class="card" id="blocCashBanque" style="display:none">
-        <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem">Valeur projetée du cash en banque</div>
+        <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem">Valeur projetée du cash restant</div>
         <div style="font-size:1rem;font-weight:800"><span id="valeurCashBanque">-</span> €</div>
-        <div class="small muted" style="margin-top:0.4rem">Capitalisation avec votre hypothèse de rendement cash.</div>
+        <div class="small muted" style="margin-top:0.4rem">Capitalisation du cash non alloué avec votre hypothèse de rendement.</div>
       </div>
+
       <div class="card" style="border-color:var(--c-accent);background:var(--c-accent);color:#fff">
-        <div class="small" style="color:#9ca3af;text-transform:uppercase;margin-bottom:0.4rem">Coût de l’inaction pour la Direction</div>
-        <div style="font-size:1rem;font-weight:900"><span id="ecartTotal">-</span> €</div>
-        <div class="small" style="margin-top:0.4rem;color:#e5e7eb">Écart entre « cash rémunéré » et « poche stratégique documentée ». Lecture comité.</div>
+        <div class="small" style="color:#9ca3af;text-transform:uppercase;margin-bottom:0.4rem">Résultat total de la simulation</div>
+        <div style="font-size:1rem;font-weight:900"><span id="totalStrategie">-</span> €</div>
+        <div class="small" style="margin-top:0.4rem;color:#e5e7eb">Total nominal projeté = poche stratégique + cash restant.</div>
       </div>
+
       <div style="border-left:4px solid var(--c-accent);padding-left:1rem">
         <div style="font-weight:800">Lecture pour le board</div>
-        <div class="small muted" style="margin-top:0.4rem">Ce différentiel n’est pas une promesse de gain. C’est un risque de non-décision, traçable et opposable.</div>
+        <div class="small muted" style="margin-top:0.4rem">Indicateur synthétique. Aucune promesse de gain.</div>
       </div>
     </section>
   </section>
@@ -856,21 +861,26 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
     const ans=anneesEntre(d1,d2);
     if(ans<=0){showError("La date d’évaluation doit être postérieure à la date de départ.");return}
 
+    // Inflation
     const inflationFactor=puissance(1+inf/100,ans);
     const valeurReelleCash=t/inflationFactor;
     const perteInflationEuro=Math.max(0,t-valeurReelleCash);
     const perteInflationPct=(perteInflationEuro/t)*100;
 
+    // Stratégie : poche + cash restant
     const montantPocheInitial=t*(ap/100);
+    const resteCash=t-montantPocheInitial;
+
     const perfFactor=puissance(1+rp/100,ans);
     const valeurPocheFuture=montantPocheInitial*perfFactor;
 
-    let valeurCashBanque=null;
-    if(isFinite(rc) && rc>=0){ valeurCashBanque = t*puissance(1+rc/100,ans); }
+    const valeurCashRestantFuture=(isFinite(rc)&&rc>=0)
+      ? resteCash*puissance(1+rc/100,ans)
+      : resteCash;
 
-    const baseComparaison = valeurCashBanque ?? t;
-    const ecartVsCash = Math.max(0, valeurPocheFuture - baseComparaison);
+    const totalStrategieFuture = valeurPocheFuture + valeurCashRestantFuture;
 
+    // UI
     q("perteInflationEuro").textContent=formatEuro(perteInflationEuro);
     q("perteInflationPct").textContent=formatPct(perteInflationPct);
     q("valeurPoche").textContent=formatEuro(valeurPocheFuture);
@@ -878,22 +888,28 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
     q("perfPctResult").textContent=formatPct(rp);
 
     const cashBlock=q("blocCashBanque");
-    if(valeurCashBanque!==null){
-      q("valeurCashBanque").textContent=formatEuro(valeurCashBanque);
+    if(resteCash>0){
+      q("valeurCashBanque").textContent=formatEuro(valeurCashRestantFuture);
       cashBlock.style.display="block";
     } else {
       cashBlock.style.display="none";
     }
 
-    q("ecartTotal").textContent=formatEuro(ecartVsCash);
+    q("totalStrategie").textContent=formatEuro(totalStrategieFuture);
 
     const live=q("resultatsBloc");
-    live.setAttribute("aria-label",`Perte pouvoir d’achat ${formatPct(perteInflationPct)}%. Poche stratégique ${formatEuro(valeurPocheFuture)} €.`);
+    live.setAttribute(
+      "aria-label",
+      `Total projeté ${formatEuro(totalStrategieFuture)} €, dont poche ${formatEuro(valeurPocheFuture)} € et cash restant ${formatEuro(valeurCashRestantFuture)} €.`
+    );
     live.style.display="grid";
     live.scrollIntoView({behavior:"smooth",block:"start"});
 
-    window.__simuData__={tresorerie:t,dateDebut:d1,dateFin:d2,inflation:inf,allocation:ap,performance:rp,rendementCash:rc,
-      perteInflationEuro,perteInflationPct,valeurPocheFuture,valeurCashBanque,ecartVsCash};
+    window.__simuData__={
+      tresorerie:t,dateDebut:d1,dateFin:d2,inflation:inf,allocation:ap,performance:rp,rendementCash:rc,
+      perteInflationEuro,perteInflationPct,
+      valeurPocheFuture,valeurCashRestantFuture,totalStrategieFuture
+    };
 
     track('update_simulator',{tresorerie:t, allocation:ap});
   }
@@ -910,12 +926,12 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
       ["Inflation (%)", d.inflation],
       ["Allocation (%)", d.allocation],
       ["Perf poche (%)", d.performance],
-      ["Rdt cash banque (%)", isFinite(d.rendementCash)?d.rendementCash:""],
+      ["Rdt cash restant (%)", isFinite(d.rendementCash)?d.rendementCash:""],
       ["Perte inflation (€)", Math.round(d.perteInflationEuro)],
       ["Perte inflation (%)", d.perteInflationPct.toFixed(1)],
       ["Valeur poche (€)", Math.round(d.valeurPocheFuture)],
-      ["Valeur cash banque (€)", d.valeurCashBanque?Math.round(d.valeurCashBanque):""],
-      ["Écart vs cash (€)", Math.round(d.ecartVsCash)]
+      ["Valeur cash restant (€)", Math.round(d.valeurCashRestantFuture)],
+      ["Total simulé (€)", Math.round(d.totalStrategieFuture)]
     ];
     const csv=rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(",")).join("\n");
     const blob=new Blob([csv],{type:"text/csv;charset=utf-8;"});
@@ -1023,7 +1039,6 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
 
         // fallback direct si endpoint invalide
         if(!isFormspree){
-          console.warn('Form endpoint invalide:', endpoint);
           status.textContent="Configuration du formulaire manquante. Ouverture email…";
           window.location.href=buildMailto(subject, obj);
           track('form_fallback_mailto',{form:form.id});
@@ -1046,13 +1061,11 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
             track('form_submit_success',{form:form.id});
           }else{
             const txt=await res.text().catch(()=>null);
-            console.error('Form error', res.status, txt);
             status.textContent="Erreur d’envoi. Ouverture email…";
             window.location.href=buildMailto(subject, obj);
-            track('form_submit_error_then_mailto',{form:form.id,status:res.status});
+            track('form_submit_error_then_mailto',{form:form.id,status:res.status,txt});
           }
         }catch(err){
-          console.error('Network/form error', err);
           status.textContent="Réseau indisponible. Ouverture email…";
           window.location.href=buildMailto(subject, obj);
           track('form_submit_network_then_mailto',{form:form.id});
@@ -1069,7 +1082,6 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
       if(f2){ handleFormSubmit(f2,'form-msg-psan'); }
     }
 
-    // expose pour debug si besoin
     window.__initForms__=initForms;
   })();
 
@@ -1097,7 +1109,6 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
     bindSimulatorButtons();
     initToggleTTC();
     initSmoothAnchors();
-    // forms
     if(window.__initForms__) window.__initForms__();
     initConsent();
     bindCTAs();
@@ -1109,3 +1120,4 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
 </script>
 </body>
 </html>
+
