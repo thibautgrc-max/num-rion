@@ -17,6 +17,7 @@
   <meta property="og:url" content="https://cryptotresorerie.education/">
   <meta property="og:image" content="https://cryptotresorerie.education/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index,follow">
   <style>
     :root{
       --c-bg:#ffffff;--c-text:#0a0a0a;--c-muted:#4b5563;--c-line:#e5e7eb;
@@ -431,7 +432,7 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
 
           <div style="display:grid;gap:0.4rem">
             <label for="nomSoc">Nom et société</label>
-            <input id="nomSoc" name="Nom et Société" type="text" placeholder="Ex : T. Garcia – Durand Industrie" required />
+            <input id="nomSoc" name="Nom et Société" type="text" placeholder="Ex : T. Garcia – Durand Industrie" autocomplete="organization" required />
           </div>
 
           <!-- Enrichissements -->
@@ -449,9 +450,9 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
           <div style="display:grid;gap:0.4rem">
             <label for="taille">Taille de l’entreprise</label>
             <select id="taille" name="Taille entreprise">
-              <option>< 50 salariés</option>
+              <option>&lt; 50 salariés</option>
               <option>50–250 salariés</option>
-              <option>> 250 salariés</option>
+              <option>&gt; 250 salariés</option>
             </select>
           </div>
 
@@ -496,10 +497,10 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
           <div style="display:grid;gap:0.4rem">
             <label for="tresoEst">Trésorerie disponible estimée</label>
             <select id="tresoEst" name="Trésorerie disponible">
-              <option>< 300 000 €</option>
+              <option>&lt; 300 000 €</option>
               <option>300 000 € – 1 M€</option>
               <option>1 M€ – 5 M€</option>
-              <option>> 5 M€</option>
+              <option>&gt; 5 M€</option>
             </select>
           </div>
 
@@ -525,11 +526,11 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
           <!-- Contact -->
           <div style="display:grid;gap:0.4rem">
             <label for="emailPro">Email professionnel</label>
-            <input id="emailPro" name="Email pro" type="email" placeholder="prenom.nom@societe.fr" required />
+            <input id="emailPro" name="Email pro" type="email" placeholder="prenom.nom@societe.fr" autocomplete="email" required />
           </div>
           <div style="display:grid;gap:0.4rem">
             <label for="tel">Téléphone (optionnel)</label>
-            <input id="tel" name="Téléphone" type="text" placeholder="+33 ..." />
+            <input id="tel" name="Téléphone" type="text" placeholder="+33 ..." autocomplete="tel" />
           </div>
 
           <!-- Zone libre -->
@@ -618,44 +619,11 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
       </table>
     </div>
 
-    <!-- Toggle TTC global pour tableau + cartes -->
+    <!-- Toggle TTC global pour tableau -->
     <div class="small" style="margin:.75rem 0 1rem;display:flex;gap:.5rem;align-items:center">
       <label><input id="toggle-ttc" type="checkbox"> Afficher les prix en TTC</label>
       <span id="tva-hint" class="small muted">(TVA 20 %)</span>
     </div>
-
-    <!-- Résumé visuel des forfaits sous le tableau -->
-    <section style="max-width:1080px;margin:1rem auto 0">
-      <div class="grid" style="gap:1rem">
-        <article class="card">
-          <h3 style="margin:0 0 .25rem">Starter</h3>
-          <p class="muted" style="margin:.2rem 0 .6rem">Audit & Simulation IA</p>
-          <div class="price-row" style="font-weight:800">
-            <span class="price-ht" data-ht="900">900 €</span>
-            <span class="price-label small muted">HT</span>
-          </div>
-          <a class="btn btn-dark" href="#form-audit" style="margin-top:.6rem">Démarrer</a>
-        </article>
-        <article class="card">
-          <h3 style="margin:0 0 .25rem">Executive</h3>
-          <p class="muted" style="margin:.2rem 0 .6rem">Audit + Atelier MiCA/IFRS</p>
-          <div class="price-row" style="font-weight:800">
-            <span class="price-ht" data-ht="2100">2 100 €</span>
-            <span class="price-label small muted">HT</span>
-          </div>
-          <a class="btn btn-dark" href="#form-audit" style="margin-top:.6rem">Réserver</a>
-        </article>
-        <article class="card">
-          <h3 style="margin:0 0 .25rem">Governance</h3>
-          <p class="muted" style="margin:.2rem 0 .6rem">Audit + Atelier + Suivi</p>
-          <div class="price-row" style="font-weight:800">
-            <span class="price-ht" data-ht="2400">≥ 2 400 €</span>
-            <span class="price-label small muted">HT</span>
-          </div>
-          <a class="btn btn-dark" href="#form-audit" style="margin-top:.6rem">Parler à un expert</a>
-        </article>
-      </div>
-    </section>
 
     <div class="small muted" style="max-width:780px;margin-top:1rem">Toutes les prestations Numérion Éducation™ sont strictement éducatives et documentaires. Aucun ordre d’achat/vente. Aucun actif sous gestion. Aucun fonds détenu.</div>
   </section>
@@ -704,7 +672,7 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
           <input type="hidden" name="_subject" value="Partenariat PSAN — Numérion Éducation">
           <div style="display:grid;gap:0.4rem">
             <label for="psanNom">Nom du PSAN / structure</label>
-            <input id="psanNom" name="PSAN / Structure" type="text" placeholder="Nom commercial + raison sociale" required />
+            <input id="psanNom" name="PSAN / Structure" type="text" placeholder="Nom commercial + raison sociale" autocomplete="organization" required />
           </div>
           <div style="display:grid;gap:0.4rem">
             <label for="statut">Statut réglementaire AMF</label>
@@ -717,10 +685,10 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
           <div style="display:grid;gap:0.4rem">
             <label for="vol">Volume corporate visé / mois</label>
             <select id="vol" name="Volume corporate cible">
-              <option>< 250 K€</option>
+              <option>&lt; 250 K€</option>
               <option>250 K€ – 1 M€</option>
               <option>1 M€ – 5 M€</option>
-              <option>> 5 M€</option>
+              <option>&gt; 5 M€</option>
             </select>
           </div>
           <div style="display:grid;gap:0.4rem">
@@ -792,8 +760,8 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
   <div style="font-weight:700;margin-bottom:.4rem">Cookies de mesure d’audience</div>
   <div class="small" style="margin-bottom:.6rem">Nous utilisons des cookies anonymisés pour améliorer le site. Aucun suivi publicitaire.</div>
   <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-    <button class="btn btn-light" id="consent-accept">Accepter</button>
-    <button class="btn btn-dark" id="consent-deny">Refuser</button>
+    <button class="btn btn-light" id="consent-accept" type="button">Accepter</button>
+    <button class="btn btn-dark" id="consent-deny" type="button">Refuser</button>
   </div>
 </div>
 
@@ -1120,4 +1088,3 @@ Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusiv
 </script>
 </body>
 </html>
-
