@@ -1,1090 +1,1163 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Numérion Éducation™ — Trésorerie numérique conforme (MiCA · AMF · IFRS)</title>
-  <meta name="description" content="Cabinet d'intelligence financière pour la trésorerie numérique des entreprises. Audit, gouvernance, dossier opposable audit. Exécution via PSAN/PSCA régulés AMF." />
-  <!-- SEO / Perf -->
-  <link rel="canonical" href="https://cryptotresorerie.education/">
-  <link rel="icon" href="/favicon.ico">
-  <meta name="theme-color" content="#0a0a0a">
-  <link rel="manifest" href="/manifest.webmanifest">
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Numérion Éducation — Trésorerie numérique conforme">
-  <meta property="og:description" content="Audit, gouvernance, dossier opposable audit. Exécution via PSAN régulés.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cryptotresorerie.education/">
-  <meta property="og:image" content="https://cryptotresorerie.education/og.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index,follow">
-  <style>
-    :root{
-      --c-bg:#ffffff;--c-text:#0a0a0a;--c-muted:#4b5563;--c-line:#e5e7eb;
-      --c-accent:#0a0a0a;--c-soft:#f9fafb;--c-warn:#fff8f0;
-      --c-ok:#ecfdf5;--c-ok-line:#6ee7b7;--radius:12px
-    }
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--c-bg);color:var(--c-text);
-      font-family:-apple-system,BlinkMacSystemFont,Inter,Roboto,Arial,sans-serif;line-height:1.4}
-    a{color:inherit}
-    /* Utils */
-    .container{width:100%;max-width:1280px;margin:0 auto;padding:4rem 1.5rem 6rem}
-    .card{border:1px solid var(--c-line);border-radius:0.75rem;background:#fff;padding:1rem 1.25rem}
-    .badge{display:inline-block;border-radius:0.4rem;padding:0.4rem 0.5rem;line-height:1.1;font-size:0.7rem;text-transform:uppercase;letter-spacing:-0.03em}
-    .btn{display:inline-block;border-radius:0.6rem;padding:0.9rem 1.1rem;font-weight:700;font-size:0.9rem;text-decoration:none;line-height:1.2;cursor:pointer}
-    .btn-dark{background:var(--c-accent);color:#fff;border:1px solid var(--c-accent)}
-    .btn-light{background:#fff;color:var(--c-accent);border:1px solid var(--c-line)}
-    .btn-green{background:#16a34a;color:#fff;border:1px solid #15803d}
-    .pill{border-radius:10px;padding:0.65rem 0.9rem}
-    .divider{width:100%;height:1px;background:var(--c-line);margin:3.5rem 0}
-    .grid{display:grid;grid-template-columns:1fr;gap:2rem}
-    .muted{color:var(--c-muted)}
-    .small{font-size:0.8rem}
-    .label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:-0.03em}
-    .error{display:none;font-size:0.8rem;color:#b91c1c;background:#fef2f2;border:1px solid #fecaca;border-radius:0.5rem;padding:0.6rem 0.8rem;margin-top:0.6rem}
-    .price-row{display:flex;gap:.4rem;align-items:baseline}
-    /* Sticky header */
-    #sticky-top{position:fixed;z-index:60;left:0;right:0;top:0;background:#ffffffcc;backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid var(--c-line);padding:0.6rem 1rem}
-    #sticky-spacer{height:3.2rem}
-    /* Mobile CTA bottom */
-    @media (max-width: 768px){
-      #sticky-cta-bottom{
-        position:fixed;left:0;right:0;bottom:0;z-index:70;background:#0a0a0a;color:#fff;
-        border-top:1px solid #111;padding:.65rem .9rem;display:flex;gap:.6rem;justify-content:space-between;align-items:center
-      }
-      #sticky-cta-bottom a{background:#16a34a;color:#fff;border:1px solid #15803d;border-radius:.6rem;padding:.6rem .9rem;font-weight:800}
-      body{padding-bottom:3.6rem}
-    }
-    /* Tables */
-    table{width:100%;border-collapse:collapse;min-width:700px;font-size:0.9rem;line-height:1.45}
-    thead tr{background:var(--c-accent);color:#fff}
-    th,td{padding:0.9rem 0.8rem;border:1px solid var(--c-line);text-align:left}
-    th{font-weight:600}
-    /* Focus */
-    .btn:focus, a:focus, input:focus, select:focus, textarea:focus{outline:3px solid #60a5fa;outline-offset:2px}
-    /* Print pack board */
-    @media print{
-      #sticky-top, #sticky-cta-bottom, #consent, nav, footer, .divider { display:none !important; }
-      .card { box-shadow:none; border:1px solid #d1d5db; }
-      @page { margin:12mm; }
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Numérion Éducation™ — Trésorerie numérique conforme (MiCA · AMF · IFRS)</title>
+    <meta name="description" content="Cabinet d'intelligence financière pour la trésorerie numérique des entreprises. Audit, gouvernance, dossier opposable audit. Exécution via PSAN/PSCA régulés AMF.">
+    <meta name="robots" content="index,follow"><!-- SEO / Perf -->
+    <link rel="canonical" href="https://cryptotresorerie.education/">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="manifest" href="/manifest.webmanifest"><!-- Open Graph / Twitter -->
+    <meta content="Numérion Éducation — Trésorerie numérique conforme">
+    <meta content="Audit, gouvernance, dossier opposable audit. Exécution via PSAN régulés.">
+    <meta content="website">
+    <meta content="https://cryptotresorerie.education/">
+    <meta content="https://cryptotresorerie.education/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        :root {
+            --c-bg: #f3f4f6;
+            --c-surface: #ffffff;
+            --c-text: #0a0a0a;
+            --c-muted: #4b5563;
+            --c-line: #e5e7eb;
+            --c-accent: #0a0a0a;
+            --c-soft: #f9fafb;
+            --c-warn: #fff8f0;
+            --c-ok: #ecfdf5;
+            --c-ok-line: #6ee7b7;
+            --radius: 12px;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #ffffff 0, #f3f4f6 42%, #e5e7eb 100%);
+            color: var(--c-text);
+            font-family: -apple-system, BlinkMacSystemFont, Inter, Roboto, Arial, sans-serif;
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: inherit
+        }
+
+        /* Layout utils */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 6rem;
+            box-sizing: border-box;
+        }
+
+        .card {
+            border: 1px solid var(--c-line);
+            border-radius: 0.9rem;
+            background: var(--c-surface);
+            padding: 1rem 1.25rem;
+            box-sizing: border-box;
+            transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+        }
+
+        @media (min-width:1024px) {
+            .card {
+                box-shadow: 0 18px 45px rgba(15, 23, 42, 0.04);
+            }
+
+            .card:hover {
+                box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+                transform: translateY(-1px);
+                border-color: #d1d5db;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            border-radius: 999px;
+            padding: 0.4rem 0.7rem;
+            line-height: 1.1;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.7rem;
+            padding: 0.85rem 1.1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            line-height: 1.2;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: background-color .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+            white-space: nowrap;
+        }
+
+        .btn-dark {
+            background: var(--c-accent);
+            color: #fff;
+            border-color: var(--c-accent);
+        }
+
+        .btn-dark:hover {
+            background: #020617;
+            border-color: #020617;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .btn-light {
+            background: #fff;
+            color: var(--c-accent);
+            border: 1px solid var(--c-line);
+        }
+
+        .btn-light:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        .btn-green {
+            background: #16a34a;
+            color: #fff;
+            border: 1px solid #15803d;
+        }
+
+        .btn-green:hover {
+            background: #15803d;
+            border-color: #166534;
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .pill {
+            border-radius: 999px;
+            padding: 0.65rem 0.9rem
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--c-line);
+            margin: 3.5rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .muted {
+            color: var(--c-muted)
+        }
+
+        .small {
+            font-size: 0.8rem
+        }
+
+        .label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            color: var(--c-muted);
+        }
+
+        .error {
+            display: none;
+            font-size: 0.8rem;
+            color: #b91c1c;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 0.5rem;
+            padding: 0.6rem 0.8rem;
+            margin-top: 0.6rem;
+        }
+
+        .price-row {
+            display: flex;
+            gap: .4rem;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        /* Sticky header */
+        #sticky-top {
+            position: fixed;
+            z-index: 60;
+            left: 0;
+            right: 0;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: saturate(130%) blur(10px);
+            border-bottom: 1px solid var(--c-line);
+            padding: 0.6rem 1rem;
+        }
+
+        #sticky-spacer {
+            height: 3.2rem
+        }
+
+        /* Hero heading scaling */
+        h1 {
+            font-size: 2.1rem;
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -0.045em;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            line-height: 1.25;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 0 0 1rem;
+        }
+
+        @media (min-width:768px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 4.5rem 2rem 6rem;
+            }
+        }
+
+        @media (min-width:1024px) {
+            h1 {
+                font-size: 2.7rem;
+            }
+        }
+
+        /* Mobile CTA bottom */
+        @media (max-width: 768px) {
+            #sticky-cta-bottom {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 70;
+                background: #020617;
+                color: #fff;
+                border-top: 1px solid #111827;
+                padding: .65rem .9rem;
+                display: flex;
+                gap: .6rem;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #sticky-cta-bottom a {
+                background: #16a34a;
+                color: #fff;
+                border: 1px solid #15803d;
+                border-radius: .6rem;
+                padding: .6rem .9rem;
+                font-weight: 800;
+            }
+
+            body {
+                padding-bottom: 3.6rem
+            }
+        }
+
+        /* Inputs / selects / textarea */
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 0.9rem;
+            padding: 0.55rem 0.65rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            box-sizing: border-box;
+            background: #fff;
+            color: var(--c-text);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #9ca3af
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 1px;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.08);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        thead tr {
+            background: var(--c-accent);
+            color: #fff;
+        }
+
+        th,
+        td {
+            padding: 0.9rem 0.8rem;
+            border: 1px solid var(--c-line);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-weight: 600
+        }
+
+        @media (max-width:768px) {
+            table {
+                font-size: 0.85rem;
+            }
+
+            th,
+            td {
+                padding: 0.7rem 0.6rem;
+            }
+        }
+
+        /* Focus */
+        .btn:focus,
+        a:focus {
+            outline: 3px solid #60a5fa;
+            outline-offset: 2px;
+        }
+
+        /* Print pack board */
+        @media print {
+
+            #sticky-top,
+            #sticky-cta-bottom,
+            #consent,
+            nav,
+            footer,
+            .divider {
+                display: none !important;
+            }
+
+            body {
+                background: #fff;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #d1d5db;
+            }
+
+            @page {
+                margin: 12mm;
+            }
+        }
+    </style>
 </head>
+
 <body>
-
-<section class="container" aria-label="Page Numérion Éducation">
-
-  <!-- ========= BARRE STICKY CONVERSION ========= -->
-  <div id="sticky-top" role="navigation" aria-label="Navigation principale">
-    <div class="container" style="padding:0;display:flex;gap:0.6rem;align-items:center;justify-content:space-between;">
-      <div style="font-weight:800;letter-spacing:-0.02em">Numérion Éducation™</div>
-      <div style="display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center">
-        <a class="btn pill btn-dark" href="#entreprise">Je dirige une entreprise</a>
-        <a class="btn pill btn-light" href="#psan">Je suis PSAN</a>
-        <a class="btn pill btn-green" id="cta-audit-hero" href="#form-audit">Demander un audit</a>
-      </div>
-    </div>
-  </div>
-  <div id="sticky-spacer" aria-hidden="true"></div>
-  <!-- ============================================ -->
-
-  <!-- ===================== HEADER / HERO ===================== -->
-  <header class="grid" style="text-align:left;max-width:1080px;margin:0 auto 2rem">
-
-    <!-- Badges crédibilité -->
-    <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:0.5rem;font-weight:500;line-height:1.2">
-      <span class="badge" style="background:var(--c-ok);border:1px solid var(--c-ok-line);color:#065f46;font-weight:700">Numérion Éducation™</span>
-      <span class="badge" style="background:var(--c-accent);border:1px solid var(--c-accent);color:#fff">Trésorerie numérique</span>
-      <span class="badge" style="background:#f3f4f6;border:1px solid #d1d5db;color:#4b5563">MiCA · AMF · IFRS</span>
-    </div>
-
-    <!-- Titre principal -->
-    <h1 style="font-size:2.2rem;line-height:1.15;font-weight:800;letter-spacing:-0.045em;margin:0;max-width:900px">
-      La Trésorerie Numérique devient la nouvelle norme de gouvernance en France
-    </h1>
-
-    <!-- Proposition de valeur -->
-    <p class="muted" style="max-width:780px;margin:0">
-      Nous accompagnons les directions générales et financières dans la mise en place d’une poche de trésorerie numérique stratégique, adossée à des actifs régulés comme Bitcoin, Ethereum ou un panier d'actifs conforme MiCA.
-Objectif : préserver la valeur réelle du cash face à l’inflation, sans exposition juridique, comptable ni fiscale.
-Méthode : cadre MiCA, traitement IFRS, gouvernance signée, exécution exclusivement via PSAN/PSCA agréés AMF.
-    </p>
-
-    <!-- Bloc d'ouverture pro-DAF -->
-    <section class="card" style="max-width:780px;background:var(--c-ok)">
-      <div class="label" style="color:#065f46;margin-bottom:0.4rem">Ce que le comité d’audit valorise désormais</div>
-      <div class="muted" style="font-size:0.95rem">
-        Les directions qui cadrent leur trésorerie numérique dès maintenant démontrent une gouvernance exemplaire :
-        <ul style="margin-top:0.5rem;list-style:disc;padding-left:1.2rem">
-          <li>Vision anticipée face à l’inflation et à la transition MiCA</li>
-          <li>Politique écrite et traçable, défendable devant les auditeurs</li>
-          <li>Décisions alignées IFRS et conformité PSAN/CASP</li>
-        </ul>
-        <br/>Ne pas agir n’est plus un risque. C’est une opportunité manquée de prouver votre leadership financier.
-      </div>
-      <div style="margin-top:0.8rem;display:flex;gap:0.6rem;flex-wrap:wrap">
-        <a href="#simulateur-inflation" class="btn btn-light" style="font-weight:800">Mesurer l’impact réel →</a>
-      </div>
-    </section>
-
-    <!-- CTA audience -->
-    <div style="display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:0.5rem">
-      <a href="#entreprise" class="btn btn-dark">Je dirige une entreprise</a>
-      <a href="#psan" class="btn btn-light">Je suis un PSAN / Collaborateur</a>
-      <a href="#form-audit" class="btn btn-green">Demander une Analyse</a>
-    </div>
-
-    <!-- Cadre légal -->
-    <div class="small muted" style="max-width:700px">
-      Numérion Éducation™ ne détient aucun fonds et ne transmet aucun ordre. Toutes les opérations sont réalisées via des PSAN / PSCA régulés AMF dans le respect du cadre MiCA.
-    </div>
-
-    <!-- Bloc autorité direction -->
-    <div style="margin-top:1.5rem;border-radius:0.9rem;border:1px solid var(--c-line);background:var(--c-accent);color:#fff;padding:1.25rem;max-width:780px">
-      <div class="small" style="color:#9ca3af;text-transform:uppercase;margin-bottom:0.5rem">Message Direction / DAF</div>
-      <div style="font-size:0.95rem;color:#e5e7eb">
-        Le cash dort. L’inflation l’érode. La Direction porte la responsabilité. Sans cadre juridique, impossible d’assumer.
-        Numérion Éducation™ fournit une politique de trésorerie numérique rationnelle, signée et traçable. Défendable devant le board, le commissaire aux comptes et l’administration.
-      </div>
-    </div>
-
-    <!-- 3 questions -->
-    <section class="card" style="max-width:780px">
-      <div class="label" style="margin-bottom:0.4rem">Trois questions décisives</div>
-      <ol class="muted" style="margin:0 0 0 1.1rem;font-size:0.92rem">
-        <li>Quel est le coût annuel documenté de l’inaction sur votre cash à 12–24 mois ?</li>
-        <li>Votre gouvernance interne couvre-t-elle MiCA, IFRS et la traçabilité des signatures ?</li>
-        <li>Êtes-vous prêt à présenter un dossier « opposable audit » en 7 jours ?</li>
-      </ol>
-      <div style="margin-top:0.7rem"><a href="#simulateur-inflation" class="btn btn-light" style="font-weight:800">Lancer le calcul →</a></div>
-    </section>
-  </header>
-
-  <!-- ===================== POURQUOI VOUS VOYEZ CETTE PAGE ===================== -->
-  <section class="card" style="max-width:1080px;margin:2rem auto 0">
-    <div class="label">Pourquoi vous voyez cette page</div>
-    <div class="muted" style="font-size:0.95rem">
-      Votre société veut intégrer une poche de trésorerie numérique au bilan, sans risque juridique personnel ni rupture comptable.
-      Numérion Éducation™ n’est pas un broker : nous produisons le cadre décisionnel, la gouvernance interne et la documentation conformité.
-      Puis nous transmettons le dossier à un PSAN/PSCA enregistré ou agréé AMF pour ouverture de compte corporate et exécution régulée.
-    </div>
-  </section>
-
-  <div class="divider" aria-hidden="true"></div>
-
-  <!-- ===================== CONTEXTE MACRO ===================== -->
-  <section class="grid" style="max-width:1080px;margin:0 auto">
-    <div style="max-width:780px">
-      <div class="label muted">Pourquoi maintenant</div>
-      <h2 style="font-size:1.6rem;line-height:1.2;font-weight:800;letter-spacing:-0.04em;margin:0 0 1rem">Le climat financier vous force à agir</h2>
-
-      <div class="grid" style="gap:1rem;font-size:0.95rem;color:var(--c-muted)">
-        <div class="card">
-          <div style="font-weight:800;color:var(--c-text);font-size:0.9rem;margin-bottom:0.4rem">Inflation</div>
-          <p style="margin:0.25rem 0">Chaque trimestre, vos liquidités perdent du pouvoir d’achat. L’inflation agit comme une taxe invisible. Les rendements bancaires ne compensent pas.</p>
-          <p style="margin:0"><strong style="text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:#d1d5db">Ne rien faire devient un choix stratégique</strong><span style="margin-left:0.4rem;color:var(--c-text);font-weight:600"> — protéger la trésorerie, c’est préserver la valeur de l’entreprise.</span></p>
+    <section class="container" aria-label="Page Numérion Éducation"><!-- ========= BARRE STICKY CONVERSION ========= -->
+        <div id="sticky-top" aria-label="Navigation principale">
+            <div class="container" style="padding:0;display:flex;gap:0.6rem;align-items:center;justify-content:space-between;">
+                <div style="font-weight:800;letter-spacing:-0.02em;white-space:nowrap;">Num&eacute;rion &Eacute;ducation&trade;</div>
+                <div style="display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center;justify-content:flex-end;"><a class="btn pill btn-dark" href="#entreprise">Je dirige une entreprise</a> <a class="btn pill btn-light" href="#psan">Je suis PSAN</a> <a class="btn pill btn-green" id="cta-audit-hero" href="#form-audit">Demander un audit</a></div>
+            </div>
         </div>
-
-        <div class="card">
-          <div style="font-weight:800;color:var(--c-text);font-size:0.9rem;margin-bottom:0.4rem">MiCA = cadre légal européen</div>
-          <p>Les actifs numériques ne sont plus une zone grise : le règlement <strong>MiCA</strong> fournit un <strong>cadre uniforme et opposable</strong> dans toute l’UE. Exécution via <strong>PSAN/PSCA régulés AMF</strong>, <strong>KYC</strong>, <strong>garde ségrégée</strong> et <strong>traçabilité</strong> intégrées.</p>
-          <p>Résultat : la Direction peut <strong>structurer une poche stratégique</strong> conforme, <strong>auditable</strong> et <strong>défendable</strong> sans risque juridique, comptable ou fiscal — alignée avec le droit européen et les contrôles AMF. C’est un <strong>pilotage de bilan encadré</strong>.</p>
-        </div>
-
-        <div class="card">
-          <div style="font-weight:800;color:var(--c-text);font-size:0.9rem;margin-bottom:0.4rem">Adoption corporate</div>
-          <p>Les grandes entreprises ne spéculent plus : elles <strong>structurent une poche stratégique</strong> en Bitcoin, Ethereum ou panier d’actifs régulés pour <strong>préserver la valeur réelle de leur trésorerie</strong>.</p>
-          <p>C’est désormais une <strong>politique de bilan</strong> conforme (<strong>MiCA / IFRS</strong>) et auditable. Références : <strong>Tesla</strong>, <strong>MicroStrategy</strong>, <strong>Block</strong>, <strong>Metaplanet</strong>, <strong>Aker</strong>, <strong>Nexon</strong>. Avec les <strong>ETF spot Bitcoin/Ethereum</strong> et l’exécution via <strong>PSAN</strong>, l’accès est <strong>liquide, conforme, institutionnel</strong>.</p>
-        </div>
-
-        <div class="card">
-          <div style="font-weight:800;color:var(--c-text);font-size:0.9rem;margin-bottom:0.4rem">Fenêtre 2025–2026</div>
-          <p>En Europe, MiCA prévoit une période transitoire jusqu’au <strong>30 juin 2026</strong> pour l’alignement complet des acteurs. Les entreprises qui cadrent maintenant prennent l’avantage normatif.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:1.5rem;border-left:4px solid var(--c-accent);padding-left:1rem">
-        <div style="font-size:0.95rem;color:var(--c-text);font-weight:800">« La trésorerie numérique n’est plus un pari. C’est une fonction de gouvernance financière. »</div>
-        <div class="small muted" style="margin-top:0.4rem">Numérion Éducation™</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== BLOC VALEUR PROUVÉE ===================== -->
-  <section class="card" style="max-width:1080px;margin:2rem auto 0">
-    <div class="label muted">Valeur prouvée</div>
-    <div class="grid" style="gap:1rem">
-      <div class="card" style="background:var(--c-soft)">
-        <div class="small" style="color:#6b7280">Onboarding PSAN</div>
-        <div style="font-weight:800;font-size:1.05rem">2–4 semaines gagnées</div>
-        <div class="small muted">Dossier propre, décision déjà actée en interne.</div>
-      </div>
-      <div class="card" style="background:var(--c-soft)">
-        <div class="small" style="color:#6b7280">Dossier opposable</div>
-        <div style="font-weight:800;font-size:1.05rem">En 7 jours</div>
-        <div class="small muted">Audit, atelier, registre des signatures, allocation cible, simulation.</div>
-      </div>
-      <div class="card" style="background:var(--c-soft)">
-        <div class="small" style="color:#6b7280">Conformité</div>
-        <div style="font-weight:800;font-size:1.05rem">MiCA · IFRS · PSAN</div>
-        <div class="small muted">Numérion ne touche aucun fonds. PSAN exécute.</div>
-      </div>
-    </div>
-    <div style="margin-top:1rem">
-      <a class="btn btn-dark" href="#offre-tarifaire">Voir les tarifs et réserver →</a>
-    </div>
-  </section>
-
-  <div class="divider" aria-hidden="true"></div>
-
-  <!-- ===================== SIMULATEUR IMPACT INFLATION ===================== -->
-  <section id="simulateur-inflation" class="card" style="max-width:1080px;margin:3rem auto">
-    <div style="display:flex;flex-direction:column;gap:0.5rem;max-width:780px">
-      <div class="label muted">Simulateur impact inflation trésorerie</div>
-      <h2 style="font-size:1.4rem;line-height:1.3;font-weight:800;margin:0">Combien votre cash a déjà perdu en pouvoir d’achat</h2>
-      <p class="muted" style="margin:0">Outil interne. Aucune recommandation d’investissement. Résultats indicatifs.</p>
-    </div>
-
-    <form id="form-simulateur" style="margin-top:1.5rem;display:grid;gap:1rem;max-width:780px;font-size:0.9rem" novalidate>
-      <div style="display:grid;gap:0.4rem">
-        <label for="tresorerie" style="font-weight:700">Trésorerie disponible (€)</label>
-        <input id="tresorerie" inputmode="decimal" type="number" min="0" step="1000" placeholder="Ex : 2 400 000" aria-describedby="help-tresorerie" />
-        <div id="help-tresorerie" class="small muted">Montant moyen de trésorerie disponible à date.</div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-        <div style="display:grid;gap:0.4rem">
-          <label for="dateDebut" style="font-weight:700">Cash détenu depuis le</label>
-          <input id="dateDebut" type="date" />
-        </div>
-        <div style="display:grid;gap:0.4rem">
-          <label for="dateFin" style="font-weight:700">Date d’évaluation</label>
-          <input id="dateFin" type="date" />
-        </div>
-      </div>
-
-      <div style="display:grid;gap:0.4rem">
-        <label for="inflation" style="font-weight:700">Inflation annuelle moyenne estimée (%)</label>
-        <input id="inflation" type="number" min="0" step="0.1" placeholder="Ex : 2.2" />
-        <div class="small muted">Hypothèse interne (zone euro, secteur, coût intrants).</div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-        <div style="display:grid;gap:0.4rem">
-          <label for="allocationPct" style="font-weight:700">% de trésorerie placé en poche stratégique</label>
-          <input id="allocationPct" type="number" min="0" max="100" step="0.5" placeholder="Ex : 3" />
-          <div class="small muted">1 % / 3 % / 5 %. Poche = réserve long terme validée en comité.</div>
-        </div>
-        <div style="display:grid;gap:0.4rem">
-          <label for="performancePct" style="font-weight:700">Rendement annuel attendu de la poche stratégique (%)</label>
-          <input id="performancePct" type="number" step="0.1" placeholder="Ex : 15" />
-          <div class="small muted">Hypothèse long terme. Décision Direction / DAF / comité.</div>
-        </div>
-      </div>
-
-      <div style="display:grid;gap:0.4rem">
-        <label for="rendementCash" style="font-weight:700">Rendement annuel du cash en banque (%)</label>
-        <input id="rendementCash" type="number" step="0.1" placeholder="Ex : 1.5" />
-        <div class="small muted">Hypothèse interne (livrets, comptes rémunérés).</div>
-      </div>
-
-      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-        <button type="button" class="btn btn-dark" id="btn-calc">Calculer l’impact pour ma société</button>
-        <button type="button" class="btn btn-light" id="btn-csv">Exporter CSV</button>
-        <button type="button" class="btn btn-green" id="btn-print">Imprimer le Pack Board</button>
-      </div>
-      <div id="erreurSimu" class="error" role="alert"></div>
-    </form>
-
-    <!-- ===== Résultats (version simplifiée avec total) ===== -->
-    <section id="resultatsBloc" aria-live="polite" aria-atomic="true"
-             style="margin-top:2rem;display:none;grid-template-columns:1fr;gap:1rem;max-width:780px">
-      <div class="card" style="background:var(--c-soft)">
-        <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem">Perte de pouvoir d’achat sur le cash</div>
-        <div style="font-size:1rem;font-weight:800"><span id="perteInflationEuro">-</span> €</div>
-        <div class="small muted" style="margin-top:0.4rem">Votre trésorerie a perdu <span id="perteInflationPct">-</span> % de pouvoir d’achat réel.</div>
-      </div>
-
-      <div class="card">
-        <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem">Valeur projetée de la poche stratégique</div>
-        <div style="font-size:1rem;font-weight:800"><span id="valeurPoche">-</span> €</div>
-        <div class="small muted" style="margin-top:0.4rem">Basé sur <span id="allocationPctResult">-</span> % d’allocation et <span id="perfPctResult">-</span> % de performance annuelle.</div>
-      </div>
-
-      <div class="card" id="blocCashBanque" style="display:none">
-        <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem">Valeur projetée du cash restant</div>
-        <div style="font-size:1rem;font-weight:800"><span id="valeurCashBanque">-</span> €</div>
-        <div class="small muted" style="margin-top:0.4rem">Capitalisation du cash non alloué avec votre hypothèse de rendement.</div>
-      </div>
-
-      <div class="card" style="border-color:var(--c-accent);background:var(--c-accent);color:#fff">
-        <div class="small" style="color:#9ca3af;text-transform:uppercase;margin-bottom:0.4rem">Résultat total de la simulation</div>
-        <div style="font-size:1rem;font-weight:900"><span id="totalStrategie">-</span> €</div>
-        <div class="small" style="margin-top:0.4rem;color:#e5e7eb">Total nominal projeté = poche stratégique + cash restant.</div>
-      </div>
-
-      <div style="border-left:4px solid var(--c-accent);padding-left:1rem">
-        <div style="font-weight:800">Lecture pour le board</div>
-        <div class="small muted" style="margin-top:0.4rem">Indicateur synthétique. Aucune promesse de gain.</div>
-      </div>
-    </section>
-  </section>
-
-  <div class="divider" aria-hidden="true"></div>
-
-  <!-- ===================== NOTRE RÔLE ===================== -->
-  <section class="grid" style="max-width:1080px;margin:0 auto">
-    <div style="max-width:780px">
-      <div class="label muted">Notre rôle</div>
-      <h2 style="font-size:1.6rem;line-height:1.2;font-weight:800;letter-spacing:-0.04em;margin:0 0 1rem">Nous ne vendons pas des crypto-actifs.<br/>Nous sécurisons votre décision d’en détenir.</h2>
-      <p class="muted" style="font-size:0.95rem;margin:0 0 1.5rem">Numérion Éducation™ est un cabinet d’intelligence financière et de gouvernance de trésorerie. Nous cadrons. Nous formons. Nous produisons le dossier « opposable audit ». Les PSAN exécutent ensuite dans leur périmètre réglementé auprès de l’AMF.</p>
-    </div>
-
-    <div class="grid" style="gap:1rem;max-width:780px">
-      <div class="card">
-        <div class="small" style="color:#6b7280">01. Audit & Simulation IA</div>
-        <div style="font-weight:700;margin:0.4rem 0">Vision trésorerie sur 12–24 mois</div>
-        <div class="muted">Analyse de la trésorerie et trois scénarios (1 % / 3 % / 5 %). Impact bilan, volatilité attendue, pression liquidité. Rapport PDF signé. Prêt comité Direction.</div>
-      </div>
-      <div class="card">
-        <div class="small" style="color:#6b7280">02. Atelier MiCA / IFRS</div>
-        <div style="font-weight:700;margin:0.4rem 0">Direction · DAF · Comptable</div>
-        <div class="muted">Session exécutive 2 h. Cadre MiCA. Traitement IFRS. Gouvernance interne. Responsabilité dirigeant. Objectif : tous savent tracer, déclarer, justifier.</div>
-      </div>
-      <div class="card">
-        <div class="small" style="color:#6b7280">03. Mise en relation PSAN</div>
-        <div style="font-weight:700;margin:0.4rem 0">Passage en exécution régulée</div>
-        <div class="muted">Introduction auprès de PSAN/PSCA enregistrés ou agréés AMF : ouverture de compte corporate, garde, exécution. Aucun fonds manipulé par Numérion. Vous restez propriétaire.</div>
-      </div>
-      <div class="card">
-        <div class="small" style="color:#6b7280">04. Suivi & Reporting IA</div>
-        <div style="font-weight:700;margin:0.4rem 0">Preuve écrite de conformité</div>
-        <div class="muted">Reporting trimestriel. Valorisation. Matrice de risques. Veille MiCA/AMF. Dossier prêt pour commissaire aux comptes et administration fiscale.</div>
-      </div>
-    </div>
-
-    <div style="border-radius:0.9rem;border:1px solid var(--c-line);background:var(--c-accent);color:#fff;padding:1.25rem;max-width:780px">
-      <div class="small" style="color:#9ca3af;text-transform:uppercase;margin-bottom:0.5rem">Pouvoir exécutif</div>
-      <div style="font-size:0.95rem;color:#e5e7eb">Après Numérion Éducation™, un dirigeant n’« expérimente » pas : il adopte une politique souveraine, consignée et assumée collectivement. Décisions cadrées juridiquement, tracées comptablement, alignées MiCA. Résultat : dossier conforme, signé, opposable. Onboarding PSAN plus rapide. Audit plus fluide.</div>
-    </div>
-  </section>
-
-  <div class="divider" aria-hidden="true"></div>
-
-  <!-- ===================== BLOC 7 JOURS ===================== -->
-  <section class="card" style="max-width:1080px;margin:0 auto 2rem;border-color:var(--c-accent);background:var(--c-accent);color:#fff">
-    <div class="label" style="color:#9ca3af">Ce que vous avez sous 7 jours</div>
-    <div class="grid" style="gap:1rem;color:#e5e7eb">
-      <div class="card" style="background:#111827;border-color:#1f2937;color:#e5e7eb">
-        <div class="small" style="color:#fff;font-weight:800;margin-bottom:0.4rem">Sous 48 h</div>
-        Audit & Simulation IA. Scénarios 1 % / 3 % / 5 %. Note PDF présentable en comité.
-      </div>
-      <div class="card" style="background:#111827;border-color:#1f2937;color:#e5e7eb">
-        <div class="small" style="color:#fff;font-weight:800;margin-bottom:0.4rem">Sous 72 h</div>
-        Atelier exécutif 2 h (Direction / DAF / comptable). Gouvernance interne et responsabilités formalisées.
-      </div>
-      <div class="card" style="background:#111827;border-color:#1f2937;color:#e5e7eb">
-        <div class="small" style="color:#fff;font-weight:800;margin-bottom:0.4rem">Sous 7 jours</div>
-        Dossier signature interne. Registre des responsabilités. Allocation cible. Prêt pour commissaire aux comptes et PSAN régulé.
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== BLOC ENTREPRISE ===================== -->
-  <div id="entreprise" class="divider" aria-hidden="true"></div>
-
-  <section class="grid" style="max-width:1080px;margin:0 auto">
-    <div style="max-width:780px">
-      <div class="label muted">Pour les dirigeants · Directions financières · Trésorerie</div>
-      <h2 style="font-size:1.6rem;line-height:1.2;font-weight:800;letter-spacing:-0.04em;margin:0 0 1rem">Votre trésorerie doit survivre à l’inflation.<br/>Elle doit aussi rester défendable juridiquement.</h2>
-      <p class="muted" style="font-size:0.95rem;margin:0 0 1.5rem">Vous voulez intégrer une poche de trésorerie numérique au bilan sans déclencher une bombe comptable ni prendre un risque personnel. Notre rôle : produire un cadre écrit que vous pouvez signer, archiver, défendre.</p>
-
-      <div class="card" style="background:var(--c-soft)">
-        <div style="font-weight:600;margin-bottom:0.4rem">Résultat direct</div>
-        <div class="muted">Stratégie de trésorerie numérique claire. Rapport PDF signé pour le comité de direction. Dossier conformité prêt pour commissaire aux comptes et expert-comptable.</div>
-      </div>
-
-      <!-- CTA + Pricing insight -->
-      <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem">
-        <a class="btn btn-dark" href="#form-audit">Demander un Audit Trésorerie</a>
-        <div class="small muted">À partir de <span class="price-ht" data-ht="900">900 €</span> <span class="price-label small muted">HT</span> (audit + simulation IA). Atelier exécutif à partir de <span class="price-ht" data-ht="1200">1 200 €</span> <span class="price-label small muted">HT</span>. <a href="#offre-tarifaire" style="text-decoration:underline">Comprendre les tarifs →</a></div>
-      </div>
-
-      <!-- Formulaire entreprise (POST + honeypot) -->
-      <section id="form-audit" class="card" style="margin-top:2rem">
-        <div class="label">Demande d'audit trésorerie (entreprise)</div>
-        <!-- TODO: remplacez XXXXXXXX par votre ID Formspree -->
-        <form id="auditForm" action="https://formspree.io/f/XXXXXXXX" method="POST" enctype="application/x-www-form-urlencoded" style="display:grid;gap:1rem;font-size:0.9rem" novalidate>
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="_subject" value="Demande Audit Trésorerie — Numérion Éducation">
-
-          <!-- Identification -->
-          <div style="display:grid;gap:0.4rem">
-            <label for="role">Rôle</label>
-            <select name="Rôle" id="role">
-              <option>Direction générale (DG / CEO)</option>
-              <option>Direction financière / DAF</option>
-              <option>Expert-comptable interne</option>
-              <option>Associé / Fondateur</option>
-            </select>
-          </div>
-
-          <div style="display:grid;gap:0.4rem">
-            <label for="nomSoc">Nom et société</label>
-            <input id="nomSoc" name="Nom et Société" type="text" placeholder="Ex : T. Garcia – Durand Industrie" autocomplete="organization" required />
-          </div>
-
-          <!-- Enrichissements -->
-          <div style="display:grid;gap:0.4rem">
-            <label for="secteur">Secteur d’activité</label>
-            <select id="secteur" name="Secteur d’activité">
-              <option>Industrie</option>
-              <option>Services</option>
-              <option>Technologie</option>
-              <option>Énergie</option>
-              <option>Autre</option>
-            </select>
-          </div>
-
-          <div style="display:grid;gap:0.4rem">
-            <label for="taille">Taille de l’entreprise</label>
-            <select id="taille" name="Taille entreprise">
-              <option>&lt; 50 salariés</option>
-              <option>50–250 salariés</option>
-              <option>&gt; 250 salariés</option>
-            </select>
-          </div>
-
-          <div style="display:grid;gap:0.4rem">
-            <label for="objectif">Objectif principal de la démarche</label>
-            <select id="objectif" name="Objectif principal">
-              <option>Préserver la valeur du cash</option>
-              <option>Optimiser le rendement</option>
-              <option>Préparer un onboarding PSAN</option>
-              <option>Conformité réglementaire / AMF</option>
-            </select>
-          </div>
-
-          <div style="display:grid;gap:0.4rem">
-            <label for="compta">Référentiel comptable</label>
-            <select id="compta" name="Référentiel comptable">
-              <option>IFRS</option>
-              <option>French GAAP</option>
-              <option>Autre / non précisé</option>
-            </select>
-          </div>
-
-          <div style="display:grid;gap:0.4rem">
-            <label for="custody">Mode de conservation envisagé</label>
-            <select id="custody" name="Mode de conservation">
-              <option>PSAN agréé AMF</option>
-              <option>Custody interne / cold wallet</option>
-              <option>À définir</option>
-            </select>
-          </div>
-
-          <div style="display:grid;gap:0.4rem">
-            <label for="maturity">Niveau de conformité interne MiCA</label>
-            <select id="maturity" name="Conformité MiCA">
-              <option>Aucune</option>
-              <option>Partielle</option>
-              <option>Complète</option>
-            </select>
-          </div>
-
-          <!-- Champs financiers -->
-          <div style="display:grid;gap:0.4rem">
-            <label for="tresoEst">Trésorerie disponible estimée</label>
-            <select id="tresoEst" name="Trésorerie disponible">
-              <option>&lt; 300 000 €</option>
-              <option>300 000 € – 1 M€</option>
-              <option>1 M€ – 5 M€</option>
-              <option>&gt; 5 M€</option>
-            </select>
-          </div>
-
-          <div style="display:grid;gap:0.4rem">
-            <label for="alloc">Allocation crypto envisagée</label>
-            <select id="alloc" name="Allocation envisagée">
-              <option>1 % (couverture inflation)</option>
-              <option>3 % (poche stratégique)</option>
-              <option>5 % (thèse long terme)</option>
-              <option>Non défini / Besoin d’aide</option>
-            </select>
-          </div>
-
-          <div style="display:grid;gap:0.4rem">
-            <label for="urgence">Niveau d'urgence</label>
-            <select id="urgence" name="Urgence">
-              <option>Étude / cadrage interne</option>
-              <option>Instruction board / comité déjà lancée</option>
-              <option>Exécution dans les 30 jours</option>
-            </select>
-          </div>
-
-          <!-- Contact -->
-          <div style="display:grid;gap:0.4rem">
-            <label for="emailPro">Email professionnel</label>
-            <input id="emailPro" name="Email pro" type="email" placeholder="prenom.nom@societe.fr" autocomplete="email" required />
-          </div>
-          <div style="display:grid;gap:0.4rem">
-            <label for="tel">Téléphone (optionnel)</label>
-            <input id="tel" name="Téléphone" type="text" placeholder="+33 ..." autocomplete="tel" />
-          </div>
-
-          <!-- Zone libre -->
-          <div style="display:grid;gap:0.4rem">
-            <label for="comments">Commentaires / précisions</label>
-            <textarea id="comments" name="Commentaires" placeholder="Décrivez votre contexte ou vos objectifs internes" style="min-height:4rem"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-dark" id="cta-submit-audit" style="width:max-content">Envoyer ma demande d'audit</button>
-          <div class="small muted" id="form-msg" role="status" aria-live="polite"></div>
-        </form>
-      </section>
-    </div>
-  </section>
-
-  <div class="divider" aria-hidden="true"></div>
-
-  <!-- ===================== OFFRE TARIFAIRE ===================== -->
-  <section id="offre-tarifaire" style="max-width:1080px;margin:0 auto">
-    <div class="card" style="margin:0 0 2rem">
-      <div class="label muted">Pourquoi Numérion passe en comité d'audit</div>
-      <ul class="muted" style="margin:0;padding-left:1rem;list-style:disc">
-        <li>Gouvernance interne écrite. Registre des signatures et des limites d’allocation.</li>
-        <li>Alignement MiCA. Exécution uniquement via des PSAN / PSCA régulés AMF. Numérion ne touche jamais les fonds.</li>
-        <li>Traitement comptable sous référentiel IFRS. Dossier exploitable par l’expert-comptable.</li>
-        <li>Traçabilité. Chaque décision est documentée, datée, signée. Opposable au commissaire aux comptes.</li>
-      </ul>
-    </div>
-
-    <!-- Bandeau réassurance -->
-    <div class="card" style="max-width:1080px;margin:0 auto 1rem;background:#fff">
-      <ul class="muted" style="margin:0;padding-left:1rem;list-style:disc">
-        <li>Aucun fonds détenu par Numérion</li>
-        <li>Exécution via PSAN/PSCA régulés AMF</li>
-        <li>Traitement IFRS documenté · Dossier opposable audit</li>
-      </ul>
-    </div>
-
-    <div class="label muted">Nos prestations éducatives (facturables)</div>
-    <h2 style="font-size:1.6rem;line-height:1.2;font-weight:800;letter-spacing:-0.04em;margin:0 0 1rem;max-width:780px">Vous payez pour de la gouvernance, de la conformité, de la traçabilité</h2>
-
-    <div style="overflow-x:auto">
-      <table aria-label="Table des prestations" id="table-prestations">
-        <thead>
-          <tr>
-            <th>Prestation</th>
-            <th>Contenu</th>
-            <th>Tarif indicatif <span id="th-prix-mode" class="small" style="font-weight:400">(HT)</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="font-weight:700">Audit & Simulation IA</td>
-            <td class="muted">Diagnostic trésorerie 12–24 mois. Scénarios 1 % / 3 % / 5 %. Analyse liquidité. Rapport PDF signé.</td>
-            <td style="font-weight:600">
-              <span class="price-ht" data-ht="900">900 €</span> <span class="price-label small muted">HT</span>
-            </td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">Atelier MiCA / IFRS</td>
-            <td class="muted">Session 2 h (Direction / Direction financière / comptable). Gouvernance interne. Responsabilité dirigeant. Traçabilité comptable et fiscale.</td>
-            <td style="font-weight:600">
-              <span class="price-ht" data-ht="1200">1 200 €</span> <span class="price-label small muted">HT</span>
-            </td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">Simulation stratégique IA</td>
-            <td class="muted">Stress tests. Tolérance de bilan. Gouvernance des signatures. Dossier décisionnel pour le comité.</td>
-            <td style="font-weight:600">
-              <span class="price-ht" data-ht="600">600 €</span> <span class="price-label small muted">HT</span>
-            </td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">Suivi trimestriel & veille</td>
-            <td class="muted">Reporting conformité MiCA / IFRS. Valorisation des positions. Matrice de risques. Dashboard Direction.</td>
-            <td style="font-weight:600">
-              <span class="price-ht" data-ht="300">300 € / mois</span> <span class="price-label small muted">HT</span>
-            </td>
-          </tr>
-          <tr>
-            <td style="font-weight:700">Mise en relation PSAN</td>
-            <td class="muted">Introduction corporate vers PSAN / PSCA régulés AMF dans un cadre d’intermédiation éducatif. Dossier de gouvernance interne transmis.</td>
-            <td style="font-weight:600">Accord partenaire</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Toggle TTC global pour tableau -->
-    <div class="small" style="margin:.75rem 0 1rem;display:flex;gap:.5rem;align-items:center">
-      <label><input id="toggle-ttc" type="checkbox"> Afficher les prix en TTC</label>
-      <span id="tva-hint" class="small muted">(TVA 20 %)</span>
-    </div>
-
-    <div class="small muted" style="max-width:780px;margin-top:1rem">Toutes les prestations Numérion Éducation™ sont strictement éducatives et documentaires. Aucun ordre d’achat/vente. Aucun actif sous gestion. Aucun fonds détenu.</div>
-  </section>
-
-  <!-- ===================== BLOC PSAN ===================== -->
-  <div id="psan" class="divider" aria-hidden="true"></div>
-
-  <section class="grid" style="max-width:1080px;margin:0 auto">
-    <div style="max-width:780px">
-      <div class="label muted">Pour les PSAN / desks corporate régulés AMF</div>
-      <h2 style="font-size:1.6rem;line-height:1.2;font-weight:800;letter-spacing:-0.04em;margin:0 0 1rem">Entreprises MiCA-prêtes, prêtes à exécuter.<br/>Vous gagnez du temps, vous augmentez vos conversions.</h2>
-      <p class="muted" style="font-size:0.95rem;margin:0 0 1.5rem">Nous formons les dirigeants. Nous cadrons la gouvernance interne. Nous produisons la documentation de décision interne. Vous recevez un prospect corporate propre, aligné, avec allocation validée.</p>
-
-      <ul class="muted" style="margin:0 0 1rem;padding-left:1rem;list-style:disc">
-        <li>Temps moyen onboarding économisé : 2–4 semaines</li>
-        <li>Taux de conversion corporate ↑ après atelier exécutif</li>
-        <li>Dossier KYC renforcé : gouvernance + registre signataires</li>
-      </ul>
-
-      <div class="grid" style="gap:1rem;margin-bottom:2rem">
-        <div class="card">
-          <div class="small" style="color:#6b7280">01. Décision interne déjà prise</div>
-          <div class="muted">L’entreprise arrive avec une fourchette d’allocation (1 % / 3 % / 5 %). Vous parlez exécution, pas évangélisation.</div>
-        </div>
-        <div class="card">
-          <div class="small" style="color:#6b7280">02. Gouvernance identifiée</div>
-          <div class="muted">Signataires clairs. Registre des responsabilités internes. La DAF sait qui valide quoi et sous quelles limites.</div>
-        </div>
-        <div class="card">
-          <div class="small" style="color:#6b7280">03. Pack conformité prêt</div>
-          <div class="muted">Dossier Numérion Éducation™ : identité juridique, logique financière, politique interne, justification stratégique. Votre KYC corporate devient plus rapide et plus robuste.</div>
-        </div>
-      </div>
-
-      <div style="display:flex;flex-direction:column;gap:1rem">
-        <a class="btn btn-dark" href="#form-psan">Devenir PSAN partenaire</a>
-        <div class="small muted">Indiquez : statut AMF / volume corporate mensuel / contact conformité.</div>
-      </div>
-
-      <!-- Formulaire PSAN (POST + honeypot) -->
-      <section id="form-psan" class="card" style="margin-top:2rem">
-        <div class="label">Devenir PSAN partenaire</div>
-        <!-- TODO: remplacez YYYYYYYY par votre ID Formspree -->
-        <form id="psanForm" action="https://formspree.io/f/YYYYYYYY" method="POST" enctype="application/x-www-form-urlencoded" style="display:grid;gap:1rem;font-size:0.9rem" novalidate>
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="_subject" value="Partenariat PSAN — Numérion Éducation">
-          <div style="display:grid;gap:0.4rem">
-            <label for="psanNom">Nom du PSAN / structure</label>
-            <input id="psanNom" name="PSAN / Structure" type="text" placeholder="Nom commercial + raison sociale" autocomplete="organization" required />
-          </div>
-          <div style="display:grid;gap:0.4rem">
-            <label for="statut">Statut réglementaire AMF</label>
-            <select id="statut" name="Statut AMF">
-              <option>PSAN enregistré AMF</option>
-              <option>PSCA agréé</option>
-              <option>En cours d’enregistrement / d’agrément</option>
-            </select>
-          </div>
-          <div style="display:grid;gap:0.4rem">
-            <label for="vol">Volume corporate visé / mois</label>
-            <select id="vol" name="Volume corporate cible">
-              <option>&lt; 250 K€</option>
-              <option>250 K€ – 1 M€</option>
-              <option>1 M€ – 5 M€</option>
-              <option>&gt; 5 M€</option>
-            </select>
-          </div>
-          <div style="display:grid;gap:0.4rem">
-            <label for="service">Type de service</label>
-            <select id="service" name="Type de service">
-              <option>Onboarding corporate / KYC pro</option>
-              <option>Garde / conservation</option>
-              <option>Exécution spot</option>
-              <option>OTC / bloc trade</option>
-              <option>Autre (décrire ci-dessous)</option>
-            </select>
-          </div>
-          <div style="display:grid;gap:0.4rem">
-            <label for="contactConf">Contact conformité</label>
-            <input id="contactConf" name="Contact conformité" type="text" placeholder="Nom + fonction + email conformité" />
-          </div>
-          <div style="display:grid;gap:0.4rem">
-            <label for="notes">Notes complémentaires</label>
-            <textarea id="notes" name="Notes" placeholder="Précisez vos attentes sur le flux entreprises Numérion Éducation™" style="min-height:4rem"></textarea>
-          </div>
-          <button type="submit" class="btn btn-dark" style="width:max-content">Soumettre ma demande partenaire</button>
-          <div class="small muted" id="form-msg-psan" role="status" aria-live="polite"></div>
-          <div class="small muted">Numérion Éducation™ agit comme tiers d’intelligence financière, formation exécutive et cadrage documentaire. Aucune réception de fonds. Aucune conservation d’actifs numériques.</div>
-        </form>
-      </section>
-    </div>
-  </section>
-
-  <div class="divider" aria-hidden="true"></div>
-
-  <!-- ===================== LABEL / CONFORMITÉ ===================== -->
-  <section class="grid" style="max-width:1080px;margin:0 auto">
-    <div class="card" style="border-radius:0.9rem;max-width:780px">
-      <div class="label muted">Label Trésorerie Crypto Conforme™</div>
-      <div style="font-size:1.1rem;font-weight:800;margin:0.75rem 0">La passerelle entre éducation, conformité et exécution institutionnelle</div>
-      <div class="muted">Après audit et atelier exécutif l’entreprise reçoit un dossier complet : gouvernance interne, registre des signatures, allocation cible, justification stratégique, éléments comptables IFRS. Ce dossier déclenche l’accès au label privé « Trésorerie Crypto Conforme™ », reconnu par nos partenaires PSAN. Résultat : onboarding plus rapide et traçabilité AMF renforcée.</div>
-    </div>
-    <div style="border:1px solid var(--c-accent);border-radius:0.9rem;padding:1.25rem;background:var(--c-accent);color:#fff;max-width:780px">
-      <div class="label" style="color:#9ca3af">Clarté juridique</div>
-      <div style="font-size:0.95rem;color:#e5e7eb">Numérion Éducation™ agit comme tiers d’intelligence financière. Aucun fonds réceptionné. Aucun ordre passé. Aucune crypto conservée. Les PSAN assurent l’exécution et la garde sous contrôle AMF / MiCA. Vous restez souverain. Eux restent régulés. Tout est traçable.</div>
-    </div>
-  </section>
-
-  <div class="divider" aria-hidden="true"></div>
-
-  <!-- ===================== FOOTER ===================== -->
-  <section style="max-width:1080px;margin:0 auto">
-    <div class="label muted" style="margin-bottom:1rem">Contact direct</div>
-    <div style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem">Thibaut Garcia · Fondateur · Numérion Éducation™</div>
-    <div class="muted" style="margin-bottom:1rem">+33 6 47 70 53 67<br/>contact@cryptotresorerie.education<br/>cryptotresorerie.education</div>
-    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:2rem">
-      <a class="btn btn-dark" href="#form-audit">Demander un Audit Trésorerie</a>
-      <a class="btn btn-light" href="#form-psan">Devenir PSAN partenaire</a>
-    </div>
-    <div class="small muted" style="margin-bottom:0.5rem">Numérion Éducation™ – Cabinet d’intelligence financière pour trésorerie numérique conforme. Aucune gestion d’actifs. Aucune détention de fonds. Aucune transmission d’ordres. Les opérations sont réalisées via des PSAN / PSCA enregistrés ou agréés AMF dans le cadre MiCA.</div>
-    <div class="small" style="color:#9ca3af"><a href="/mentions-legales" style="color:#6b7280;text-decoration:none">Mentions légales</a> · <a href="/conformite" style="color:#6b7280;text-decoration:none">Conformité & Responsabilité</a> · © 2025 Numérion Éducation™ · Tous droits réservés</div>
-  </section>
-
-</section>
-
-<!-- ===== Mobile CTA sticky bottom ===== -->
-<div id="sticky-cta-bottom" role="region" aria-label="Appel à l’action mobile">
-  <span style="font-weight:700">Audit trésorerie en 7 jours</span>
-  <a href="#form-audit">Démarrer</a>
-</div>
-
-<!-- ===== Bandeau consentement CNIL minimal ===== -->
-<div id="consent" style="position:fixed;left:1rem;right:1rem;bottom:1rem;background:#111827;color:#e5e7eb;border:1px solid #1f2937;border-radius:.75rem;padding:.9rem;z-index:80;display:none">
-  <div style="font-weight:700;margin-bottom:.4rem">Cookies de mesure d’audience</div>
-  <div class="small" style="margin-bottom:.6rem">Nous utilisons des cookies anonymisés pour améliorer le site. Aucun suivi publicitaire.</div>
-  <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-    <button class="btn btn-light" id="consent-accept" type="button">Accepter</button>
-    <button class="btn btn-dark" id="consent-deny" type="button">Refuser</button>
-  </div>
-</div>
-
-<!-- ========= JSON-LD ========= -->
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Numérion Éducation","url":"https://cryptotresorerie.education","logo":"https://cryptotresorerie.education/logo.png","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"contact@cryptotresorerie.education"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Audit Trésorerie Numérique","provider":{"@type":"Organization","name":"Numérion Éducation"},"areaServed":"FR","offers":{"@type":"Offer","price":"900","priceCurrency":"EUR"}}
-</script>
-
-<script>
-/* ================== Helpers ================== */
-(function(){
-  function q(id){return document.getElementById(id)}
-  function $all(sel,root){return Array.from((root||document).querySelectorAll(sel))}
-  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
-  function anneesEntre(d1,d2){const s=new Date(d1),e=new Date(d2);const ms=e-s;if(!isFinite(ms)||ms<=0)return 0;return ms/(365*24*60*60*1000)}
-  const puissance=(b,e)=>Math.pow(b,e);
-  function formatEuro(x){if(!isFinite(x))return "-";return x.toLocaleString("fr-FR",{minimumFractionDigits:0,maximumFractionDigits:0})}
-  function formatPct(x){if(!isFinite(x))return "-";return x.toLocaleString("fr-FR",{minimumFractionDigits:1,maximumFractionDigits:1})}
-  function showError(msg){const err=q("erreurSimu");if(!err)return;err.style.display="block";err.textContent=msg}
-  function clearError(){const err=q("erreurSimu");if(!err)return;err.style.display="none";err.textContent=""}
-  function track(evt,meta){ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:evt, ...meta, ts:Date.now()}); }
-
-  /* ================== Defaults + persistence ================== */
-  function initDefaults(){
-    const today=new Date();
-    const oneYearAgo=new Date(today);oneYearAgo.setFullYear(oneYearAgo.getFullYear()-1);
-    const pad=n=>String(n).padStart(2,"0");
-    const toISO=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
-    const ids=["dateDebut","dateFin","inflation","allocationPct","performancePct","rendementCash","tresorerie"];
-    if(q("dateDebut") && !q("dateDebut").value)q("dateDebut").value=toISO(oneYearAgo);
-    if(q("dateFin") && !q("dateFin").value)q("dateFin").value=toISO(today);
-    if(q("inflation") && !q("inflation").value)q("inflation").value=2.2;
-    if(q("allocationPct") && !q("allocationPct").value)q("allocationPct").value=3;
-    if(q("performancePct") && !q("performancePct").value)q("performancePct").value=15;
-
-    ids.forEach(id=>{
-      const el=q(id); if(!el) return;
-      const k="simu_"+id;
-      const v=localStorage.getItem(k);
-      if(v && !el.value) el.value=v;
-      el.addEventListener('input',()=>localStorage.setItem(k, el.value));
-    });
-  }
-
-  /* ================== Calcul simulateur ================== */
-  function calculerSimulation(){
-    clearError();
-    const t=parseFloat(q("tresorerie").value);
-    const d1=q("dateDebut").value;
-    const d2=q("dateFin").value;
-    const inf=parseFloat(q("inflation").value);
-    const ap=parseFloat(q("allocationPct").value);
-    const rp=parseFloat(q("performancePct").value);
-    const rc=parseFloat(q("rendementCash").value);
-
-    if(!isFinite(t)||t<=0){showError("Renseignez une trésorerie (en €).");return}
-    if(!d1||!d2){showError("Renseignez la période (dates).");return}
-    if(!isFinite(inf)||inf<0){showError("Renseignez l’inflation annuelle (%).");return}
-    if(!isFinite(ap)||ap<0||ap>100){showError("Renseignez un pourcentage d’allocation valide (0 à 100).");return}
-    if(!isFinite(rp)){showError("Renseignez une hypothèse de performance annuelle (%).");return}
-
-    const ans=anneesEntre(d1,d2);
-    if(ans<=0){showError("La date d’évaluation doit être postérieure à la date de départ.");return}
-
-    // Inflation
-    const inflationFactor=puissance(1+inf/100,ans);
-    const valeurReelleCash=t/inflationFactor;
-    const perteInflationEuro=Math.max(0,t-valeurReelleCash);
-    const perteInflationPct=(perteInflationEuro/t)*100;
-
-    // Stratégie : poche + cash restant
-    const montantPocheInitial=t*(ap/100);
-    const resteCash=t-montantPocheInitial;
-
-    const perfFactor=puissance(1+rp/100,ans);
-    const valeurPocheFuture=montantPocheInitial*perfFactor;
-
-    const valeurCashRestantFuture=(isFinite(rc)&&rc>=0)
-      ? resteCash*puissance(1+rc/100,ans)
-      : resteCash;
-
-    const totalStrategieFuture = valeurPocheFuture + valeurCashRestantFuture;
-
-    // UI
-    q("perteInflationEuro").textContent=formatEuro(perteInflationEuro);
-    q("perteInflationPct").textContent=formatPct(perteInflationPct);
-    q("valeurPoche").textContent=formatEuro(valeurPocheFuture);
-    q("allocationPctResult").textContent=formatPct(ap);
-    q("perfPctResult").textContent=formatPct(rp);
-
-    const cashBlock=q("blocCashBanque");
-    if(resteCash>0){
-      q("valeurCashBanque").textContent=formatEuro(valeurCashRestantFuture);
-      cashBlock.style.display="block";
-    } else {
-      cashBlock.style.display="none";
-    }
-
-    q("totalStrategie").textContent=formatEuro(totalStrategieFuture);
-
-    const live=q("resultatsBloc");
-    live.setAttribute(
-      "aria-label",
-      `Total projeté ${formatEuro(totalStrategieFuture)} €, dont poche ${formatEuro(valeurPocheFuture)} € et cash restant ${formatEuro(valeurCashRestantFuture)} €.`
-    );
-    live.style.display="grid";
-    live.scrollIntoView({behavior:"smooth",block:"start"});
-
-    window.__simuData__={
-      tresorerie:t,dateDebut:d1,dateFin:d2,inflation:inf,allocation:ap,performance:rp,rendementCash:rc,
-      perteInflationEuro,perteInflationPct,
-      valeurPocheFuture,valeurCashRestantFuture,totalStrategieFuture
-    };
-
-    track('update_simulator',{tresorerie:t, allocation:ap});
-  }
-
-  /* ================== Export CSV ================== */
-  function exporterCSV(){
-    const d=window.__simuData__;
-    if(!d){ alert("Calculez d’abord une simulation."); return; }
-    const rows=[
-      ["Champ","Valeur"],
-      ["Trésorerie", d.tresorerie],
-      ["Date début", d.dateDebut],
-      ["Date fin", d.dateFin],
-      ["Inflation (%)", d.inflation],
-      ["Allocation (%)", d.allocation],
-      ["Perf poche (%)", d.performance],
-      ["Rdt cash restant (%)", isFinite(d.rendementCash)?d.rendementCash:""],
-      ["Perte inflation (€)", Math.round(d.perteInflationEuro)],
-      ["Perte inflation (%)", d.perteInflationPct.toFixed(1)],
-      ["Valeur poche (€)", Math.round(d.valeurPocheFuture)],
-      ["Valeur cash restant (€)", Math.round(d.valeurCashRestantFuture)],
-      ["Total simulé (€)", Math.round(d.totalStrategieFuture)]
-    ];
-    const csv=rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(",")).join("\n");
-    const blob=new Blob([csv],{type:"text/csv;charset=utf-8;"});
-    const url=URL.createObjectURL(blob);
-    const a=document.createElement("a");a.href=url;a.download="simulation_numerion.csv";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
-    track('export_csv',{});
-  }
-
-  /* ================== Impression ================== */
-  function printPack(){
-    if(!q('resultatsBloc') || q('resultatsBloc').style.display==='none'){
-      alert("Calculez d’abord une simulation.");
-      return;
-    }
-    window.print();
-  }
-
-  /* ================== Bind CTA simulateur ================== */
-  function bindSimulatorButtons(){
-    q('btn-calc') ?.addEventListener('click', e=>{e.preventDefault(); calculerSimulation();});
-    q('btn-csv')  ?.addEventListener('click', e=>{e.preventDefault(); exporterCSV();});
-    q('btn-print')?.addEventListener('click', e=>{e.preventDefault(); printPack();});
-  }
-
-  /* ================== Toggle TTC ================== */
-  function initToggleTTC(){
-    const ttc=q('toggle-ttc'); if(!ttc) return;
-    const TVA=1.20;
-    const fmt=n=>n.toLocaleString('fr-FR');
-    const isNum=n=>!isNaN(n)&&isFinite(n);
-    const thMode=q('th-prix-mode');
-    const labels=$all('.price-label');
-
-    function updateLabels(isTTC){
-      labels.forEach(l=>{ l.textContent=isTTC?'TTC':'HT'; });
-      if(thMode) thMode.textContent = isTTC ? '(TTC)' : '(HT)';
-      q('tva-hint')?.setAttribute('aria-live','polite');
-    }
-
-    function update(){
-      const isTTC=ttc.checked;
-      $all('.price-ht').forEach(el=>{
-        const ht=parseFloat(el.getAttribute('data-ht'));
-        if(!isNum(ht)) return;
-        const isPerMonth=(el.textContent||'').includes('/ mois');
-        const val=isTTC?Math.round(ht*TVA):ht;
-        el.textContent=fmt(val)+" €"+(isPerMonth?' / mois':'');
-      });
-      updateLabels(isTTC);
-    }
-
-    ttc.addEventListener('change',()=>{ update(); track('toggle_ttc',{ttc:ttc.checked}); });
-    update();
-  }
-
-  /* ================== Smooth anchors ================== */
-  function initSmoothAnchors(){
-    $all('a[href^="#"]').forEach(l=>{
-      l.addEventListener('click',function(e){
-        const cible=document.querySelector(this.getAttribute('href'));
-        if(cible){ e.preventDefault(); cible.scrollIntoView({behavior:"smooth",block:"start"}); }
-      });
-    });
-  }
-
-  /* ================== FORMS — robuste + fallback mailto ================== */
-  (function(){
-    const MAILTO_FALLBACK = "contact@cryptotresorerie.education";
-
-    function serializeForm(form){
-      const data=new FormData(form);
-      const obj={};
-      data.forEach((v,k)=>{ obj[k]=v });
-      return {data, obj};
-    }
-
-    function buildMailto(subject, obj){
-      const pairs=Object.entries(obj).map(([k,v])=>`${k}: ${v}`).join('%0A');
-      return `mailto:${MAILTO_FALLBACK}?subject=${encodeURIComponent(subject)}&body=${pairs}`;
-    }
-
-    function handleFormSubmit(form, statusNodeId){
-      const status=q(statusNodeId);
-      const submitBtn=form.querySelector('button[type="submit"]');
-
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-
-        const email=form.querySelector('input[type="email"]');
-        if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value||'')){
-          email.setAttribute('aria-invalid','true');
-          status.textContent="Email invalide. Exemple : prenom.nom@societe.fr";
-          email.focus();
-          return;
-        }
-
-        const endpoint=form.getAttribute('action')||'';
-        const isFormspree=/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint);
-        const {data, obj}=serializeForm(form);
-        const subject=form.querySelector('input[name="_subject"]')?.value || 'Demande Numérion';
-
-        // anti double-clic
-        submitBtn?.setAttribute('disabled','true');
-        status.textContent="Envoi en cours…";
-
-        // fallback direct si endpoint invalide
-        if(!isFormspree){
-          status.textContent="Configuration du formulaire manquante. Ouverture email…";
-          window.location.href=buildMailto(subject, obj);
-          track('form_fallback_mailto',{form:form.id});
-          submitBtn?.removeAttribute('disabled');
-          return;
-        }
-
-        try{
-          const res=await fetch(endpoint,{
-            method:'POST',
-            body:data,
-            headers:{'Accept':'application/json'},
-            mode:'cors',
-            referrerPolicy:'no-referrer'
-          });
-
-          if(res.ok){
-            status.textContent="Merci. Nous vous contactons sous 24 h ouvrées.";
-            form.reset();
-            track('form_submit_success',{form:form.id});
-          }else{
-            const txt=await res.text().catch(()=>null);
-            status.textContent="Erreur d’envoi. Ouverture email…";
-            window.location.href=buildMailto(subject, obj);
-            track('form_submit_error_then_mailto',{form:form.id,status:res.status,txt});
+        <div id="sticky-spacer" aria-hidden="true"><br></div><!-- ============================================ --> <!-- ===================== HEADER / HERO ===================== -->
+        <header class="grid" style="text-align:left;max-width:1080px;margin:0 auto 2rem;"><!-- Badges crédibilité -->
+            <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:0.5rem;font-weight:500;line-height:1.2;margin-bottom:0.4rem;"><span class="badge" style="background:var(--c-ok);border-color:var(--c-ok-line);color:#065f46;font-weight:700;">Num&eacute;rion &Eacute;ducation&trade;</span> <span class="badge" style="background:var(--c-accent);border-color:var(--c-accent);color:#fff;">Tr&eacute;sorerie num&eacute;rique</span> <span class="badge" style="background:#f3f4f6;border-color:#d1d5db;color:#4b5563;">MiCA &middot; AMF &middot; IFRS</span></div><!-- Titre principal -->
+            <h1 style="max-width:900px;">La Tr&eacute;sorerie Num&eacute;rique devient la nouvelle norme de gouvernance en France</h1><!-- Proposition de valeur -->
+            <p class="muted" style="max-width:780px;margin:0.75rem 0 0;">Nous accompagnons les directions g&eacute;n&eacute;rales et financi&egrave;res dans la mise en place d&rsquo;une poche de tr&eacute;sorerie num&eacute;rique strat&eacute;gique, adoss&eacute;e &agrave; des actifs r&eacute;gul&eacute;s comme Bitcoin, Ethereum ou un panier d&apos;actifs conforme MiCA.<br>Objectif : pr&eacute;server la valeur r&eacute;elle du cash face &agrave; l&rsquo;inflation, sans exposition juridique, comptable ni fiscale.<br>M&eacute;thode : cadre MiCA, traitement IFRS, gouvernance sign&eacute;e, ex&eacute;cution exclusivement via PSAN/PSCA agr&eacute;&eacute;s AMF.</p><!-- Bloc d'ouverture pro-DAF -->
+            <section class="card" style="max-width:780px;background:var(--c-ok);border-color:var(--c-ok-line);margin-top:1rem;">
+                <div class="label" style="color:#065f46;margin-bottom:0.4rem;">Ce que le comit&eacute; d&rsquo;audit valorise d&eacute;sormais</div>
+                <div class="muted" style="font-size:0.95rem;">Les directions qui cadrent leur tr&eacute;sorerie num&eacute;rique d&egrave;s maintenant d&eacute;montrent une gouvernance exemplaire :<ul style="margin-top:0.5rem;list-style:disc;padding-left:1.2rem;">
+                        <li>Vision anticip&eacute;e face &agrave; l&rsquo;inflation et &agrave; la transition MiCA</li>
+                        <li>Politique &eacute;crite et tra&ccedil;able, d&eacute;fendable devant les auditeurs</li>
+                        <li>D&eacute;cisions align&eacute;es IFRS et conformit&eacute; PSAN/CASP</li>
+                    </ul><br>Ne pas agir n&rsquo;est plus un risque. C&rsquo;est une opportunit&eacute; manqu&eacute;e de prouver votre leadership financier.</div>
+                <div style="margin-top:0.8rem;display:flex;gap:0.6rem;flex-wrap:wrap;"><a href="#simulateur-inflation" class="btn btn-light" style="font-weight:800;">Mesurer l&rsquo;impact r&eacute;el &rarr;</a></div>
+            </section><!-- CTA audience -->
+            <div style="display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:0.75rem;"><a href="#entreprise" class="btn btn-dark">Je dirige une entreprise</a> <a href="#psan" class="btn btn-light">Je suis un PSAN / Collaborateur</a> <a href="#form-audit" class="btn btn-green">Demander une Analyse</a></div><!-- Cadre légal -->
+            <div class="small muted" style="max-width:700px;margin-top:0.75rem;">Num&eacute;rion &Eacute;ducation&trade; ne d&eacute;tient aucun fonds et ne transmet aucun ordre. Toutes les op&eacute;rations sont r&eacute;alis&eacute;es via des PSAN / PSCA r&eacute;gul&eacute;s AMF dans le respect du cadre MiCA.</div><!-- Bloc autorité direction -->
+            <div style="margin-top:1.5rem;border-radius:0.9rem;border:1px solid var(--c-line);background:var(--c-accent);color:#fff;padding:1.25rem;max-width:780px;">
+                <div class="small" style="color:#9ca3af;text-transform:uppercase;margin-bottom:0.5rem;">Message Direction / DAF</div>
+                <div style="font-size:0.95rem;color:#e5e7eb;">Le cash dort. L&rsquo;inflation l&rsquo;&eacute;rode. La Direction porte la responsabilit&eacute;. Sans cadre juridique, impossible d&rsquo;assumer. Num&eacute;rion &Eacute;ducation&trade; fournit une politique de tr&eacute;sorerie num&eacute;rique rationnelle, sign&eacute;e et tra&ccedil;able. D&eacute;fendable devant le board, le commissaire aux comptes et l&rsquo;administration.</div>
+            </div><!-- 3 questions -->
+            <section class="card" style="max-width:780px;margin-top:1rem;">
+                <div class="label" style="margin-bottom:0.4rem;">Trois questions d&eacute;cisives</div>
+                <ol class="muted" style="margin:0 0 0 1.1rem;font-size:0.92rem;">
+                    <li>Quel est le co&ucirc;t annuel document&eacute; de l&rsquo;inaction sur votre cash &agrave; 12&ndash;24 mois ?</li>
+                    <li>Votre gouvernance interne couvre-t-elle MiCA, IFRS et la tra&ccedil;abilit&eacute; des signatures ?</li>
+                    <li>&Ecirc;tes-vous pr&ecirc;t &agrave; pr&eacute;senter un dossier &laquo; opposable audit &raquo; en 7 jours ?</li>
+                </ol>
+                <div style="margin-top:0.7rem;"><a href="#simulateur-inflation" class="btn btn-light" style="font-weight:800;">Lancer le calcul &rarr;</a></div>
+            </section>
+        </header><!-- ===================== POURQUOI VOUS VOYEZ CETTE PAGE ===================== -->
+        <section class="card" style="max-width:1080px;margin:2rem auto 0;">
+            <div class="label">Pourquoi vous voyez cette page</div>
+            <div class="muted" style="font-size:0.95rem;margin-top:0.35rem;">Votre soci&eacute;t&eacute; veut int&eacute;grer une poche de tr&eacute;sorerie num&eacute;rique au bilan, sans risque juridique personnel ni rupture comptable. Num&eacute;rion &Eacute;ducation&trade; n&rsquo;est pas un broker : nous produisons le cadre d&eacute;cisionnel, la gouvernance interne et la documentation conformit&eacute;. Puis nous transmettons le dossier &agrave; un PSAN/PSCA enregistr&eacute; ou agr&eacute;&eacute; AMF pour ouverture de compte corporate et ex&eacute;cution r&eacute;gul&eacute;e.</div>
+        </section>
+        <div class="divider" aria-hidden="true"><br></div><!-- ===================== CONTEXTE MACRO ===================== -->
+        <section class="grid" style="max-width:1080px;margin:0 auto;">
+            <div style="max-width:780px;">
+                <div class="label muted">Pourquoi maintenant</div>
+                <h2>Le climat financier vous force &agrave; agir</h2>
+                <div class="grid" style="gap:1rem;font-size:0.95rem;color:var(--c-muted);">
+                    <div class="card">
+                        <div style="font-weight:800;color:var(--c-text);font-size:0.9rem;margin-bottom:0.4rem;">Inflation</div>
+                        <p style="margin:0.25rem 0;">Chaque trimestre, vos liquidit&eacute;s perdent du pouvoir d&rsquo;achat. L&rsquo;inflation agit comme une taxe invisible. Les rendements bancaires ne compensent pas.</p>
+                        <p style="margin:0;"><strong style="text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:#d1d5db;">Ne rien faire devient un choix strat&eacute;gique</strong><span style="margin-left:0.4rem;color:var(--c-text);font-weight:600;">&nbsp;&mdash; prot&eacute;ger la tr&eacute;sorerie, c&rsquo;est pr&eacute;server la valeur de l&rsquo;entreprise.</span></p>
+                    </div>
+                    <div class="card">
+                        <div style="font-weight:800;color:var(--c-text);font-size:0.9rem;margin-bottom:0.4rem;">MiCA = cadre l&eacute;gal europ&eacute;en</div>
+                        <p>Les actifs num&eacute;riques ne sont plus une zone grise : le r&egrave;glement <strong>MiCA</strong> fournit un <strong>cadre uniforme et opposable</strong> dans toute l&rsquo;UE. Ex&eacute;cution via <strong>PSAN/PSCA r&eacute;gul&eacute;s AMF</strong>, <strong>KYC</strong>, <strong>garde s&eacute;gr&eacute;g&eacute;e</strong> et <strong>tra&ccedil;abilit&eacute;</strong> int&eacute;gr&eacute;es.</p>
+                        <p>R&eacute;sultat : la Direction peut <strong>structurer une poche strat&eacute;gique</strong> conforme, <strong>auditable</strong> et <strong>d&eacute;fendable</strong> sans risque juridique, comptable ou fiscal &mdash; align&eacute;e avec le droit europ&eacute;en et les contr&ocirc;les AMF. C&rsquo;est un <strong>pilotage de bilan encadr&eacute;</strong>.</p>
+                    </div>
+                    <div class="card">
+                        <div style="font-weight:800;color:var(--c-text);font-size:0.9rem;margin-bottom:0.4rem;">Adoption corporate</div>
+                        <p>Les grandes entreprises ne sp&eacute;culent plus : elles <strong>structurent une poche strat&eacute;gique</strong> en Bitcoin, Ethereum ou panier d&rsquo;actifs r&eacute;gul&eacute;s pour <strong>pr&eacute;server la valeur r&eacute;elle de leur tr&eacute;sorerie</strong>.</p>
+                        <p>C&rsquo;est d&eacute;sormais une <strong>politique de bilan</strong> conforme (<strong>MiCA / IFRS</strong>) et auditable. R&eacute;f&eacute;rences : <strong>Tesla</strong>, <strong>MicroStrategy</strong>, <strong>Block</strong>, <strong>Metaplanet</strong>, <strong>Aker</strong>, <strong>Nexon</strong>. Avec les <strong>ETF spot Bitcoin/Ethereum</strong> et l&rsquo;ex&eacute;cution via <strong>PSAN</strong>, l&rsquo;acc&egrave;s est <strong>liquide, conforme, institutionnel</strong>.</p>
+                    </div>
+                    <div class="card">
+                        <div style="font-weight:800;color:var(--c-text);font-size:0.9rem;margin-bottom:0.4rem;">Fen&ecirc;tre 2025&ndash;2026</div>
+                        <p>En Europe, MiCA pr&eacute;voit une p&eacute;riode transitoire jusqu&rsquo;au <strong>30 juin 2026</strong> pour l&rsquo;alignement complet des acteurs. Les entreprises qui cadrent maintenant prennent l&rsquo;avantage normatif.</p>
+                    </div>
+                </div>
+                <div style="margin-top:1.5rem;border-left:4px solid var(--c-accent);padding-left:1rem;">
+                    <div style="font-size:0.95rem;color:var(--c-text);font-weight:800;">&laquo; La tr&eacute;sorerie num&eacute;rique n&rsquo;est plus un pari. C&rsquo;est une fonction de gouvernance financi&egrave;re. &raquo;</div>
+                    <div class="small muted" style="margin-top:0.4rem;">Num&eacute;rion &Eacute;ducation&trade;</div>
+                </div>
+            </div>
+        </section><!-- ===================== BLOC VALEUR PROUVÉE ===================== -->
+        <section class="card" style="max-width:1080px;margin:2rem auto 0;">
+            <div class="label muted">Valeur prouv&eacute;e</div>
+            <div class="grid" style="gap:1rem;margin-top:0.75rem;">
+                <div class="card" style="background:var(--c-soft);">
+                    <div class="small" style="color:#6b7280;">Onboarding PSAN</div>
+                    <div style="font-weight:800;font-size:1.05rem;">2&ndash;4 semaines gagn&eacute;es</div>
+                    <div class="small muted">Dossier propre, d&eacute;cision d&eacute;j&agrave; act&eacute;e en interne.</div>
+                </div>
+                <div class="card" style="background:var(--c-soft);">
+                    <div class="small" style="color:#6b7280;">Dossier opposable</div>
+                    <div style="font-weight:800;font-size:1.05rem;">En 7 jours</div>
+                    <div class="small muted">Audit, atelier, registre des signatures, allocation cible, simulation.</div>
+                </div>
+                <div class="card" style="background:var(--c-soft);">
+                    <div class="small" style="color:#6b7280;">Conformit&eacute;</div>
+                    <div style="font-weight:800;font-size:1.05rem;">MiCA &middot; IFRS &middot; PSAN</div>
+                    <div class="small muted">Num&eacute;rion ne touche aucun fonds. PSAN ex&eacute;cute.</div>
+                </div>
+            </div>
+            <div style="margin-top:1rem;"><a class="btn btn-dark" href="#offre-tarifaire">Voir les tarifs et r&eacute;server &rarr;</a></div>
+        </section>
+        <div class="divider" aria-hidden="true"><br></div><!-- ===================== SIMULATEUR IMPACT INFLATION ===================== -->
+        <section id="simulateur-inflation" class="card" style="max-width:1080px;margin:3rem auto;">
+            <div style="display:flex;flex-direction:column;gap:0.5rem;max-width:780px;">
+                <div class="label muted">Simulateur impact inflation tr&eacute;sorerie</div>
+                <h2>Combien votre cash a d&eacute;j&agrave; perdu en pouvoir d&rsquo;achat</h2>
+                <p class="muted" style="margin:0;">Outil interne. Aucune recommandation d&rsquo;investissement. R&eacute;sultats indicatifs.</p>
+            </div>
+            <form id="form-simulateur" style="margin-top:1.5rem;display:grid;gap:1rem;max-width:780px;font-size:0.9rem;" novalidate="">
+                <div style="display:grid;gap:0.4rem;"><label for="tresorerie" style="font-weight:700;">Tr&eacute;sorerie disponible (&euro;)</label>&nbsp;<input id="tresorerie" type="number" min="0" step="1000" placeholder="Ex : 2 400 000" aria-describedby="help-tresorerie">
+                    <div id="help-tresorerie" class="small muted">Montant moyen de tr&eacute;sorerie disponible &agrave; date.</div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                    <div style="display:grid;gap:0.4rem;"><label for="dateDebut" style="font-weight:700;">Cash d&eacute;tenu depuis le</label>&nbsp;<input id="dateDebut" type="date"></div>
+                    <div style="display:grid;gap:0.4rem;"><label for="dateFin" style="font-weight:700;">Date d&rsquo;&eacute;valuation</label>&nbsp;<input id="dateFin" type="date"></div>
+                </div>
+                <div style="display:grid;gap:0.4rem;"><label for="inflation" style="font-weight:700;">Inflation annuelle moyenne estim&eacute;e (%)</label>&nbsp;<input id="inflation" type="number" min="0" step="0.1" placeholder="Ex : 2.2">
+                    <div class="small muted">Hypoth&egrave;se interne (zone euro, secteur, co&ucirc;t intrants).</div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                    <div style="display:grid;gap:0.4rem;"><label for="allocationPct" style="font-weight:700;">% de tr&eacute;sorerie plac&eacute; en poche strat&eacute;gique</label>&nbsp;<input id="allocationPct" type="number" min="0" max="100" step="0.5" placeholder="Ex : 3">
+                        <div class="small muted">1 % / 3 % / 5 %. Poche = r&eacute;serve long terme valid&eacute;e en comit&eacute;.</div>
+                    </div>
+                    <div style="display:grid;gap:0.4rem;"><label for="performancePct" style="font-weight:700;">Rendement annuel attendu de la poche strat&eacute;gique (%)</label>&nbsp;<input id="performancePct" type="number" step="0.1" placeholder="Ex : 15">
+                        <div class="small muted">Hypoth&egrave;se long terme. D&eacute;cision Direction / DAF / comit&eacute;.</div>
+                    </div>
+                </div>
+                <div style="display:grid;gap:0.4rem;"><label for="rendementCash" style="font-weight:700;">Rendement annuel du cash en banque (%)</label>&nbsp;<input id="rendementCash" type="number" step="0.1" placeholder="Ex : 1.5">
+                    <div class="small muted">Hypoth&egrave;se interne (livrets, comptes r&eacute;mun&eacute;r&eacute;s).</div>
+                </div>
+                <div style="display:flex;gap:.6rem;flex-wrap:wrap;"><button type="button" class="btn btn-dark" id="btn-calc">Calculer l&rsquo;impact pour ma soci&eacute;t&eacute;</button> <button type="button" class="btn btn-light" id="btn-csv">Exporter CSV</button> <button type="button" class="btn btn-green" id="btn-print">Imprimer le Pack Board</button></div>
+                <div id="erreurSimu" class="error"><br></div>
+            </form><!-- ===== Résultats (version simplifiée avec total) ===== -->
+            <section id="resultatsBloc" aria-live="polite" aria-atomic="true" style="margin-top:2rem;display:none;grid-template-columns:1fr;gap:1rem;max-width:780px;">
+                <div class="card" style="background:var(--c-soft);">
+                    <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem;">Perte de pouvoir d&rsquo;achat sur le cash</div>
+                    <div style="font-size:1rem;font-weight:800;"><span id="perteInflationEuro">-</span> &euro;</div>
+                    <div class="small muted" style="margin-top:0.4rem;">Votre tr&eacute;sorerie a perdu <span id="perteInflationPct">-</span> % de pouvoir d&rsquo;achat r&eacute;el.</div>
+                </div>
+                <div class="card">
+                    <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem;">Valeur projet&eacute;e de la poche strat&eacute;gique</div>
+                    <div style="font-size:1rem;font-weight:800;"><span id="valeurPoche">-</span> &euro;</div>
+                    <div class="small muted" style="margin-top:0.4rem;">Bas&eacute; sur <span id="allocationPctResult">-</span> % d&rsquo;allocation et <span id="perfPctResult">-</span> % de performance annuelle.</div>
+                </div>
+                <div class="card" id="blocCashBanque" style="display:none;">
+                    <div class="small" style="color:#6b7280;text-transform:uppercase;margin-bottom:0.4rem;">Valeur projet&eacute;e du cash restant</div>
+                    <div style="font-size:1rem;font-weight:800;"><span id="valeurCashBanque">-</span> &euro;</div>
+                    <div class="small muted" style="margin-top:0.4rem;">Capitalisation du cash non allou&eacute; avec votre hypoth&egrave;se de rendement.</div>
+                </div>
+                <div class="card" style="border-color:var(--c-accent);background:var(--c-accent);color:#fff;">
+                    <div class="small" style="color:#9ca3af;text-transform:uppercase;margin-bottom:0.4rem;">R&eacute;sultat total de la simulation</div>
+                    <div style="font-size:1rem;font-weight:900;"><span id="totalStrategie">-</span> &euro;</div>
+                    <div class="small" style="margin-top:0.4rem;color:#e5e7eb;">Total nominal projet&eacute; = poche strat&eacute;gique + cash restant.</div>
+                </div>
+                <div style="border-left:4px solid var(--c-accent);padding-left:1rem;">
+                    <div style="font-weight:800;">Lecture pour le board</div>
+                    <div class="small muted" style="margin-top:0.4rem;">Indicateur synth&eacute;tique. Aucune promesse de gain.</div>
+                </div>
+            </section>
+        </section>
+        <div class="divider" aria-hidden="true"><br></div><!-- ===================== NOTRE RÔLE ===================== -->
+        <section class="grid" style="max-width:1080px;margin:0 auto;">
+            <div style="max-width:780px;">
+                <div class="label muted">Notre r&ocirc;le</div>
+                <h2>Nous ne vendons pas des crypto-actifs.<br>Nous s&eacute;curisons votre d&eacute;cision d&rsquo;en d&eacute;tenir.</h2>
+                <p class="muted" style="font-size:0.95rem;margin:0 0 1.5rem;">Num&eacute;rion &Eacute;ducation&trade; est un cabinet d&rsquo;intelligence financi&egrave;re et de gouvernance de tr&eacute;sorerie. Nous cadrons. Nous formons. Nous produisons le dossier &laquo; opposable audit &raquo;. Les PSAN ex&eacute;cutent ensuite dans leur p&eacute;rim&egrave;tre r&eacute;glement&eacute; aupr&egrave;s de l&rsquo;AMF.</p>
+            </div>
+            <div class="grid" style="gap:1rem;max-width:780px;">
+                <div class="card">
+                    <div class="small" style="color:#6b7280;">01. Audit &amp; Simulation IA</div>
+                    <div style="font-weight:700;margin:0.4rem 0;">Vision tr&eacute;sorerie sur 12&ndash;24 mois</div>
+                    <div class="muted">Analyse de la tr&eacute;sorerie et trois sc&eacute;narios (1 % / 3 % / 5 %). Impact bilan, volatilit&eacute; attendue, pression liquidit&eacute;. Rapport PDF sign&eacute;. Pr&ecirc;t comit&eacute; Direction.</div>
+                </div>
+                <div class="card">
+                    <div class="small" style="color:#6b7280;">02. Atelier MiCA / IFRS</div>
+                    <div style="font-weight:700;margin:0.4rem 0;">Direction &middot; DAF &middot; Comptable</div>
+                    <div class="muted">Session ex&eacute;cutive 2 h. Cadre MiCA. Traitement IFRS. Gouvernance interne. Responsabilit&eacute; dirigeant. Objectif : tous savent tracer, d&eacute;clarer, justifier.</div>
+                </div>
+                <div class="card">
+                    <div class="small" style="color:#6b7280;">03. Mise en relation PSAN</div>
+                    <div style="font-weight:700;margin:0.4rem 0;">Passage en ex&eacute;cution r&eacute;gul&eacute;e</div>
+                    <div class="muted">Introduction aupr&egrave;s de PSAN/PSCA enregistr&eacute;s ou agr&eacute;&eacute;s AMF : ouverture de compte corporate, garde, ex&eacute;cution. Aucun fonds manipul&eacute; par Num&eacute;rion. Vous restez propri&eacute;taire.</div>
+                </div>
+                <div class="card">
+                    <div class="small" style="color:#6b7280;">04. Suivi &amp; Reporting IA</div>
+                    <div style="font-weight:700;margin:0.4rem 0;">Preuve &eacute;crite de conformit&eacute;</div>
+                    <div class="muted">Reporting trimestriel. Valorisation. Matrice de risques. Veille MiCA/AMF. Dossier pr&ecirc;t pour commissaire aux comptes et administration fiscale.</div>
+                </div>
+            </div>
+            <div style="border-radius:0.9rem;border:1px solid var(--c-line);background:var(--c-accent);color:#fff;padding:1.25rem;max-width:780px;">
+                <div class="small" style="color:#9ca3af;text-transform:uppercase;margin-bottom:0.5rem;">Pouvoir ex&eacute;cutif</div>
+                <div style="font-size:0.95rem;color:#e5e7eb;">Apr&egrave;s Num&eacute;rion &Eacute;ducation&trade;, un dirigeant n&rsquo;&laquo; exp&eacute;rimente &raquo; pas : il adopte une politique souveraine, consign&eacute;e et assum&eacute;e collectivement. D&eacute;cisions cadr&eacute;es juridiquement, trac&eacute;es comptablement, align&eacute;es MiCA. R&eacute;sultat : dossier conforme, sign&eacute;, opposable. Onboarding PSAN plus rapide. Audit plus fluide.</div>
+            </div>
+        </section>
+        <div class="divider" aria-hidden="true"><br></div><!-- ===================== BLOC 7 JOURS ===================== -->
+        <section class="card" style="max-width:1080px;margin:0 auto 2rem;border-color:var(--c-accent);background:var(--c-accent);color:#fff;">
+            <div class="label" style="color:#9ca3af;">Ce que vous avez sous 7 jours</div>
+            <div class="grid" style="gap:1rem;color:#e5e7eb;margin-top:0.75rem;">
+                <div class="card" style="background:#111827;border-color:#1f2937;color:#e5e7eb;">
+                    <div class="small" style="color:#fff;font-weight:800;margin-bottom:0.4rem;">Sous 48 h</div>Audit &amp; Simulation IA. Sc&eacute;narios 1 % / 3 % / 5 %. Note PDF pr&eacute;sentable en comit&eacute;.
+                </div>
+                <div class="card" style="background:#111827;border-color:#1f2937;color:#e5e7eb;">
+                    <div class="small" style="color:#fff;font-weight:800;margin-bottom:0.4rem;">Sous 72 h</div>Atelier ex&eacute;cutif 2 h (Direction / DAF / comptable). Gouvernance interne et responsabilit&eacute;s formalis&eacute;es.
+                </div>
+                <div class="card" style="background:#111827;border-color:#1f2937;color:#e5e7eb;">
+                    <div class="small" style="color:#fff;font-weight:800;margin-bottom:0.4rem;">Sous 7 jours</div>Dossier signature interne. Registre des responsabilit&eacute;s. Allocation cible. Pr&ecirc;t pour commissaire aux comptes et PSAN r&eacute;gul&eacute;.
+                </div>
+            </div>
+        </section><!-- ===================== BLOC ENTREPRISE ===================== -->
+        <div id="entreprise" class="divider" aria-hidden="true"><br></div>
+        <section class="grid" style="max-width:1080px;margin:0 auto;">
+            <div style="max-width:780px;">
+                <div class="label muted">Pour les dirigeants &middot; Directions financi&egrave;res &middot; Tr&eacute;sorerie</div>
+                <h2>Votre tr&eacute;sorerie doit survivre &agrave; l&rsquo;inflation.<br>Elle doit aussi rester d&eacute;fendable juridiquement.</h2>
+                <p class="muted" style="font-size:0.95rem;margin:0 0 1.5rem;">Vous voulez int&eacute;grer une poche de tr&eacute;sorerie num&eacute;rique au bilan sans d&eacute;clencher une bombe comptable ni prendre un risque personnel. Notre r&ocirc;le : produire un cadre &eacute;crit que vous pouvez signer, archiver, d&eacute;fendre.</p>
+                <div class="card" style="background:var(--c-soft);">
+                    <div style="font-weight:600;margin-bottom:0.4rem;">R&eacute;sultat direct</div>
+                    <div class="muted">Strat&eacute;gie de tr&eacute;sorerie num&eacute;rique claire. Rapport PDF sign&eacute; pour le comit&eacute; de direction. Dossier conformit&eacute; pr&ecirc;t pour commissaire aux comptes et expert-comptable.</div>
+                </div><!-- CTA + Pricing insight -->
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem;"><a class="btn btn-dark" href="#form-audit">Demander un Audit Tr&eacute;sorerie</a>
+                    <div class="small muted">&Agrave; partir de <span class="price-ht" data-ht="900">900 &euro;</span> <span class="price-label small muted">HT</span> (audit + simulation IA). Atelier ex&eacute;cutif &agrave; partir de <span class="price-ht" data-ht="1200">1 200 &euro;</span> <span class="price-label small muted">HT</span>. <a href="#offre-tarifaire" style="text-decoration:underline;">Comprendre les tarifs &rarr;</a></div>
+                </div><!-- Formulaire entreprise (POST + honeypot) -->
+                <section id="form-audit" class="card" style="margin-top:2rem;">
+                    <div class="label">Demande d&apos;audit tr&eacute;sorerie (entreprise)</div><!-- TODO: remplacez XXXXXXXX par votre ID Formspree -->
+                    <form id="auditForm" action="https://formspree.io/f/XXXXXXXX" method="POST" enctype="application/x-www-form-urlencoded" style="display:grid;gap:1rem;font-size:0.9rem;" novalidate=""><input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off">&nbsp;<input type="hidden" name="_subject" value="Demande Audit Trésorerie — Numérion Éducation"> <!-- Identification -->
+                        <div style="display:grid;gap:0.4rem;"><label for="role">R&ocirc;le</label> <select name="Rôle" id="role">&nbsp;<option>Direction g&eacute;n&eacute;rale (DG / CEO)</option>
+                                <option>Direction financi&egrave;re / DAF</option>
+                                <option>Expert-comptable interne</option>
+                                <option>Associ&eacute; / Fondateur</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="nomSoc">Nom et soci&eacute;t&eacute;</label>&nbsp;<input id="nomSoc" name="Nom et Société" type="text" placeholder="Ex : T. Garcia – Durand Industrie" autocomplete="organization" required=""></div><!-- Enrichissements -->
+                        <div style="display:grid;gap:0.4rem;"><label for="secteur">Secteur d&rsquo;activit&eacute;</label> <select id="secteur" name="Secteur d’activité">&nbsp;<option>Industrie</option>
+                                <option>Services</option>
+                                <option>Technologie</option>
+                                <option>&Eacute;nergie</option>
+                                <option>Autre</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="taille">Taille de l&rsquo;entreprise</label> <select id="taille" name="Taille entreprise">&nbsp;<option>&lt; 50 salari&eacute;s</option>
+                                <option>50&ndash;250 salari&eacute;s</option>
+                                <option>&gt; 250 salari&eacute;s</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="objectif">Objectif principal de la d&eacute;marche</label> <select id="objectif" name="Objectif principal">&nbsp;<option>Pr&eacute;server la valeur du cash</option>
+                                <option>Optimiser le rendement</option>
+                                <option>Pr&eacute;parer un onboarding PSAN</option>
+                                <option>Conformit&eacute; r&eacute;glementaire / AMF</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="compta">R&eacute;f&eacute;rentiel comptable</label> <select id="compta" name="Référentiel comptable">&nbsp;<option>IFRS</option>
+                                <option>French GAAP</option>
+                                <option>Autre / non pr&eacute;cis&eacute;</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="custody">Mode de conservation envisag&eacute;</label> <select id="custody" name="Mode de conservation">&nbsp;<option>PSAN agr&eacute;&eacute; AMF</option>
+                                <option>Custody interne / cold wallet</option>
+                                <option>&Agrave; d&eacute;finir</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="maturity">Niveau de conformit&eacute; interne MiCA</label> <select id="maturity" name="Conformité MiCA">&nbsp;<option>Aucune</option>
+                                <option>Partielle</option>
+                                <option>Compl&egrave;te</option>&nbsp;
+                            </select></div><!-- Champs financiers -->
+                        <div style="display:grid;gap:0.4rem;"><label for="tresoEst">Tr&eacute;sorerie disponible estim&eacute;e</label> <select id="tresoEst" name="Trésorerie disponible">&nbsp;<option>&lt; 300 000 &euro;</option>
+                                <option>300 000 &euro; &ndash; 1 M&euro;</option>
+                                <option>1 M&euro; &ndash; 5 M&euro;</option>
+                                <option>&gt; 5 M&euro;</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="alloc">Allocation crypto envisag&eacute;e</label> <select id="alloc" name="Allocation envisagée">&nbsp;<option>1 % (couverture inflation)</option>
+                                <option>3 % (poche strat&eacute;gique)</option>
+                                <option>5 % (th&egrave;se long terme)</option>
+                                <option>Non d&eacute;fini / Besoin d&rsquo;aide</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="urgence">Niveau d&apos;urgence</label> <select id="urgence" name="Urgence">&nbsp;<option>&Eacute;tude / cadrage interne</option>
+                                <option>Instruction board / comit&eacute; d&eacute;j&agrave; lanc&eacute;e</option>
+                                <option>Ex&eacute;cution dans les 30 jours</option>&nbsp;
+                            </select></div><!-- Contact -->
+                        <div style="display:grid;gap:0.4rem;"><label for="emailPro">Email professionnel</label>&nbsp;<input id="emailPro" name="Email pro" type="email" placeholder="prenom.nom@societe.fr" autocomplete="email" required=""></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="tel">T&eacute;l&eacute;phone (optionnel)</label>&nbsp;<input id="tel" name="Téléphone" type="text" placeholder="+33 ..." autocomplete="tel"></div><!-- Zone libre -->
+                        <div style="display:grid;gap:0.4rem;"><label for="comments">Commentaires / pr&eacute;cisions</label> <textarea id="comments" name="Commentaires" placeholder="Décrivez votre contexte ou vos objectifs internes" style="min-height:4rem;"></textarea></div><button type="submit" class="btn btn-dark" id="cta-submit-audit" style="width:max-content;">Envoyer ma demande d&apos;audit</button>
+                        <div class="small muted" id="form-msg" aria-live="polite"><br></div>
+                    </form>
+                </section>
+            </div>
+        </section>
+        <div class="divider" aria-hidden="true"><br></div><!-- ===================== OFFRE TARIFAIRE ===================== -->
+        <section id="offre-tarifaire" style="max-width:1080px;margin:0 auto;">
+            <div class="card" style="margin:0 0 2rem;">
+                <div class="label muted">Pourquoi Num&eacute;rion passe en comit&eacute; d&apos;audit</div>
+                <ul class="muted" style="margin:0.5rem 0 0;padding-left:1rem;list-style:disc;">
+                    <li>Gouvernance interne &eacute;crite. Registre des signatures et des limites d&rsquo;allocation.</li>
+                    <li>Alignement MiCA. Ex&eacute;cution uniquement via des PSAN / PSCA r&eacute;gul&eacute;s AMF. Num&eacute;rion ne touche jamais les fonds.</li>
+                    <li>Traitement comptable sous r&eacute;f&eacute;rentiel IFRS. Dossier exploitable par l&rsquo;expert-comptable.</li>
+                    <li>Tra&ccedil;abilit&eacute;. Chaque d&eacute;cision est document&eacute;e, dat&eacute;e, sign&eacute;e. Opposable au commissaire aux comptes.</li>
+                </ul>
+            </div><!-- Bandeau réassurance -->
+            <div class="card" style="max-width:1080px;margin:0 auto 1rem;background:#fff;">
+                <ul class="muted" style="margin:0;padding-left:1rem;list-style:disc;">
+                    <li>Aucun fonds d&eacute;tenu par Num&eacute;rion</li>
+                    <li>Ex&eacute;cution via PSAN/PSCA r&eacute;gul&eacute;s AMF</li>
+                    <li>Traitement IFRS document&eacute; &middot; Dossier opposable audit</li>
+                </ul>
+            </div>
+            <div class="label muted">Nos prestations &eacute;ducatives (facturables)</div>
+            <h2 style="max-width:780px;">Vous payez pour de la gouvernance, de la conformit&eacute;, de la tra&ccedil;abilit&eacute;</h2>
+            <div style="overflow-x:auto;margin-top:1rem;">
+                <table aria-label="Table des prestations" id="table-prestations">
+                    <thead>
+                        <tr>
+                            <th>Prestation</th>
+                            <th>Contenu</th>
+                            <th>Tarif indicatif <span id="th-prix-mode" class="small" style="font-weight:400;">(HT)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:700;">Audit &amp; Simulation IA</td>
+                            <td class="muted">Diagnostic tr&eacute;sorerie 12&ndash;24 mois. Sc&eacute;narios 1 % / 3 % / 5 %. Analyse liquidit&eacute;. Rapport PDF sign&eacute;.</td>
+                            <td style="font-weight:600;"><span class="price-ht" data-ht="900">900 &euro;</span> <span class="price-label small muted">HT</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:700;">Atelier MiCA / IFRS</td>
+                            <td class="muted">Session 2 h (Direction / Direction financi&egrave;re / comptable). Gouvernance interne. Responsabilit&eacute; dirigeant. Tra&ccedil;abilit&eacute; comptable et fiscale.</td>
+                            <td style="font-weight:600;"><span class="price-ht" data-ht="1200">1 200 &euro;</span> <span class="price-label small muted">HT</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:700;">Simulation strat&eacute;gique IA</td>
+                            <td class="muted">Stress tests. Tol&eacute;rance de bilan. Gouvernance des signatures. Dossier d&eacute;cisionnel pour le comit&eacute;.</td>
+                            <td style="font-weight:600;"><span class="price-ht" data-ht="600">600 &euro;</span> <span class="price-label small muted">HT</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:700;">Suivi trimestriel &amp; veille</td>
+                            <td class="muted">Reporting conformit&eacute; MiCA / IFRS. Valorisation des positions. Matrice de risques. Dashboard Direction.</td>
+                            <td style="font-weight:600;"><span class="price-ht" data-ht="300">300 &euro; / mois</span> <span class="price-label small muted">HT</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:700;">Mise en relation PSAN</td>
+                            <td class="muted">Introduction corporate vers PSAN / PSCA r&eacute;gul&eacute;s AMF dans un cadre d&rsquo;interm&eacute;diation &eacute;ducatif. Dossier de gouvernance interne transmis.</td>
+                            <td style="font-weight:600;">Accord partenaire</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- Toggle TTC global pour tableau -->
+            <div class="small" style="margin:.75rem 0 1rem;display:flex;gap:.5rem;align-items:center;"><label><input id="toggle-ttc" type="checkbox">&nbsp;Afficher les prix en TTC</label> <span id="tva-hint" class="small muted">(TVA 20 %)</span></div>
+            <div class="small muted" style="max-width:780px;margin-top:1rem;">Toutes les prestations Num&eacute;rion &Eacute;ducation&trade; sont strictement &eacute;ducatives et documentaires. Aucun ordre d&rsquo;achat/vente. Aucun actif sous gestion. Aucun fonds d&eacute;tenu.</div>
+        </section><!-- ===================== BLOC PSAN ===================== -->
+        <div id="psan" class="divider" aria-hidden="true"><br></div>
+        <section class="grid" style="max-width:1080px;margin:0 auto;">
+            <div style="max-width:780px;">
+                <div class="label muted">Pour les PSAN / desks corporate r&eacute;gul&eacute;s AMF</div>
+                <h2>Entreprises MiCA-pr&ecirc;tes, pr&ecirc;tes &agrave; ex&eacute;cuter.<br>Vous gagnez du temps, vous augmentez vos conversions.</h2>
+                <p class="muted" style="font-size:0.95rem;margin:0 0 1.5rem;">Nous formons les dirigeants. Nous cadrons la gouvernance interne. Nous produisons la documentation de d&eacute;cision interne. Vous recevez un prospect corporate propre, align&eacute;, avec allocation valid&eacute;e.</p>
+                <ul class="muted" style="margin:0 0 1rem;padding-left:1rem;list-style:disc;">
+                    <li>Temps moyen onboarding &eacute;conomis&eacute; : 2&ndash;4 semaines</li>
+                    <li>Taux de conversion corporate &uarr; apr&egrave;s atelier ex&eacute;cutif</li>
+                    <li>Dossier KYC renforc&eacute; : gouvernance + registre signataires</li>
+                </ul>
+                <div class="grid" style="gap:1rem;margin-bottom:2rem;">
+                    <div class="card">
+                        <div class="small" style="color:#6b7280;">01. D&eacute;cision interne d&eacute;j&agrave; prise</div>
+                        <div class="muted">L&rsquo;entreprise arrive avec une fourchette d&rsquo;allocation (1 % / 3 % / 5 %). Vous parlez ex&eacute;cution, pas &eacute;vang&eacute;lisation.</div>
+                    </div>
+                    <div class="card">
+                        <div class="small" style="color:#6b7280;">02. Gouvernance identifi&eacute;e</div>
+                        <div class="muted">Signataires clairs. Registre des responsabilit&eacute;s internes. La DAF sait qui valide quoi et sous quelles limites.</div>
+                    </div>
+                    <div class="card">
+                        <div class="small" style="color:#6b7280;">03. Pack conformit&eacute; pr&ecirc;t</div>
+                        <div class="muted">Dossier Num&eacute;rion &Eacute;ducation&trade; : identit&eacute; juridique, logique financi&egrave;re, politique interne, justification strat&eacute;gique. Votre KYC corporate devient plus rapide et plus robuste.</div>
+                    </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:1rem;"><a class="btn btn-dark" href="#form-psan">Devenir PSAN partenaire</a>
+                    <div class="small muted">Indiquez : statut AMF / volume corporate mensuel / contact conformit&eacute;.</div>
+                </div><!-- Formulaire PSAN (POST + honeypot) -->
+                <section id="form-psan" class="card" style="margin-top:2rem;">
+                    <div class="label">Devenir PSAN partenaire</div><!-- TODO: remplacez YYYYYYYY par votre ID Formspree -->
+                    <form id="psanForm" action="https://formspree.io/f/YYYYYYYY" method="POST" enctype="application/x-www-form-urlencoded" style="display:grid;gap:1rem;font-size:0.9rem;" novalidate=""><input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off">&nbsp;<input type="hidden" name="_subject" value="Partenariat PSAN — Numérion Éducation">
+                        <div style="display:grid;gap:0.4rem;"><label for="psanNom">Nom du PSAN / structure</label>&nbsp;<input id="psanNom" name="PSAN / Structure" type="text" placeholder="Nom commercial + raison sociale" autocomplete="organization" required=""></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="statut">Statut r&eacute;glementaire AMF</label> <select id="statut" name="Statut AMF">&nbsp;<option>PSAN enregistr&eacute; AMF</option>
+                                <option>PSCA agr&eacute;&eacute;</option>
+                                <option>En cours d&rsquo;enregistrement / d&rsquo;agr&eacute;ment</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="vol">Volume corporate vis&eacute; / mois</label> <select id="vol" name="Volume corporate cible">&nbsp;<option>&lt; 250 K&euro;</option>
+                                <option>250 K&euro; &ndash; 1 M&euro;</option>
+                                <option>1 M&euro; &ndash; 5 M&euro;</option>
+                                <option>&gt; 5 M&euro;</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="service">Type de service</label> <select id="service" name="Type de service">&nbsp;<option>Onboarding corporate / KYC pro</option>
+                                <option>Garde / conservation</option>
+                                <option>Ex&eacute;cution spot</option>
+                                <option>OTC / bloc trade</option>
+                                <option>Autre (d&eacute;crire ci-dessous)</option>&nbsp;
+                            </select></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="contactConf">Contact conformit&eacute;</label>&nbsp;<input id="contactConf" name="Contact conformité" type="text" placeholder="Nom + fonction + email conformité"></div>
+                        <div style="display:grid;gap:0.4rem;"><label for="notes">Notes compl&eacute;mentaires</label> <textarea id="notes" name="Notes" placeholder="Précisez vos attentes sur le flux entreprises Numérion Éducation™" style="min-height:4rem;"></textarea></div><button type="submit" class="btn btn-dark" style="width:max-content;">Soumettre ma demande partenaire</button>
+                        <div class="small muted" id="form-msg-psan" aria-live="polite"><br></div>
+                        <div class="small muted">Num&eacute;rion &Eacute;ducation&trade; agit comme tiers d&rsquo;intelligence financi&egrave;re, formation ex&eacute;cutive et cadrage documentaire. Aucune r&eacute;ception de fonds. Aucune conservation d&rsquo;actifs num&eacute;riques.</div>
+                    </form>
+                </section>
+            </div>
+        </section>
+        <div class="divider" aria-hidden="true"><br></div><!-- ===================== LABEL / CONFORMITÉ ===================== -->
+        <section class="grid" style="max-width:1080px;margin:0 auto;">
+            <div class="card" style="border-radius:0.9rem;max-width:780px;">
+                <div class="label muted">Label Tr&eacute;sorerie Crypto Conforme&trade;</div>
+                <div style="font-size:1.1rem;font-weight:800;margin:0.75rem 0;">La passerelle entre &eacute;ducation, conformit&eacute; et ex&eacute;cution institutionnelle</div>
+                <div class="muted">Apr&egrave;s audit et atelier ex&eacute;cutif l&rsquo;entreprise re&ccedil;oit un dossier complet : gouvernance interne, registre des signatures, allocation cible, justification strat&eacute;gique, &eacute;l&eacute;ments comptables IFRS. Ce dossier d&eacute;clenche l&rsquo;acc&egrave;s au label priv&eacute; &laquo; Tr&eacute;sorerie Num&eacute;rion Conforme&trade; &raquo;, reconnu par nos partenaires PSAN. R&eacute;sultat : onboarding plus rapide et tra&ccedil;abilit&eacute; AMF renforc&eacute;e.</div>
+            </div>
+            <div style="border:1px solid var(--c-accent);border-radius:0.9rem;padding:1.25rem;background:var(--c-accent);color:#fff;max-width:780px;">
+                <div class="label" style="color:#9ca3af;">Clart&eacute; juridique</div>
+                <div style="font-size:0.95rem;color:#e5e7eb;">Num&eacute;rion &Eacute;ducation&trade; agit comme tiers d&rsquo;intelligence financi&egrave;re. Aucun fonds r&eacute;ceptionn&eacute;. Aucun ordre pass&eacute;. Aucune crypto conserv&eacute;e. Les PSAN assurent l&rsquo;ex&eacute;cution et la garde sous contr&ocirc;le AMF / MiCA. Vous restez souverain. Eux restent r&eacute;gul&eacute;s. Tout est tra&ccedil;able.</div>
+            </div>
+        </section>
+        <div class="divider" aria-hidden="true"><br></div><!-- ===================== FOOTER ===================== -->
+        <section style="max-width:1080px;margin:0 auto;">
+            <div class="label muted" style="margin-bottom:1rem;">Contact direct</div>
+            <div style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;">Thibaut Garcia &middot; Fondateur &middot; Num&eacute;rion &Eacute;ducation&trade;</div>
+            <div class="muted" style="margin-bottom:1rem;">+33 6 47 70 53 67<br>contact@cryptotresorerie.education</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:2rem;"><a class="btn btn-dark" href="#form-audit">Demander un Audit Tr&eacute;sorerie</a> <a class="btn btn-light" href="#form-psan">Devenir PSAN partenaire</a></div>
+            <div class="small muted" style="margin-bottom:0.5rem;">Num&eacute;rion &Eacute;ducation&trade; &ndash; Cabinet d&rsquo;intelligence financi&egrave;re pour tr&eacute;sorerie num&eacute;rique conforme. Aucune gestion d&rsquo;actifs. Aucune d&eacute;tention de fonds. Aucune transmission d&rsquo;ordres. Les op&eacute;rations sont r&eacute;alis&eacute;es via des PSAN / PSCA enregistr&eacute;s ou agr&eacute;&eacute;s AMF dans le cadre MiCA.</div>
+            <div class="small" style="color:#9ca3af;"><a href="/mentions-legales" style="color:#6b7280;text-decoration:none;">Mentions l&eacute;gales</a> &middot; <a href="/conformite" style="color:#6b7280;text-decoration:none;">Conformit&eacute; &amp; Responsabilit&eacute;</a> &middot; &copy; 2025 Num&eacute;rion &Eacute;ducation&trade; &middot; Tous droits r&eacute;serv&eacute;s</div>
+        </section>
+    </section><!-- ===== Mobile CTA sticky bottom ===== --><!-- ===== Bandeau consentement CNIL minimal ===== -->
+    <div id="consent" style="position:fixed;left:1rem;right:1rem;bottom:1rem;background:#111827;color:#e5e7eb;border:1px solid #1f2937;border-radius:.75rem;padding:.9rem;z-index:80;display:none;">
+        <div style="font-weight:700;margin-bottom:.4rem;">Cookies de mesure d&rsquo;audience</div>
+        <div class="small" style="margin-bottom:.6rem;">Nous utilisons des cookies anonymis&eacute;s pour am&eacute;liorer le site. Aucun suivi publicitaire.</div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;"><button class="btn btn-light" id="consent-accept" type="button">Accepter</button> <button class="btn btn-dark" id="consent-deny" type="button">Refuser</button></div>
+    </div><!-- ========= JSON-LD ========= -->
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Organization","name":"Numérion Éducation","url":"https://cryptotresorerie.education","logo":"https://cryptotresorerie.education/logo.png","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"contact@cryptotresorerie.education"}}
+    </script>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Service","name":"Audit Trésorerie Numérique","provider":{"@type":"Organization","name":"Numérion Éducation"},"areaServed":"FR","offers":{"@type":"Offer","price":"900","priceCurrency":"EUR"}}
+    </script>
+    <script>
+        /* ================== Helpers ================== */
+        (function(){
+          function q(id){return document.getElementById(id)}
+          function $all(sel,root){return Array.from((root||document).querySelectorAll(sel))}
+          function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+          function anneesEntre(d1,d2){
+            const s=new Date(d1),e=new Date(d2);
+            const ms=e-s;
+            if(!isFinite(ms)||ms<=0)return 0;
+            return ms/(365*24*60*60*1000);
           }
-        }catch(err){
-          status.textContent="Réseau indisponible. Ouverture email…";
-          window.location.href=buildMailto(subject, obj);
-          track('form_submit_network_then_mailto',{form:form.id});
-        }finally{
-          submitBtn?.removeAttribute('disabled');
-        }
-      });
-    }
+          const puissance=(b,e)=>Math.pow(b,e);
+          function formatEuro(x){
+            if(!isFinite(x))return "-";
+            return x.toLocaleString("fr-FR",{minimumFractionDigits:0,maximumFractionDigits:0});
+          }
+          function formatPct(x){
+            if(!isFinite(x))return "-";
+            return x.toLocaleString("fr-FR",{minimumFractionDigits:1,maximumFractionDigits:1});
+          }
+          function showError(msg){
+            const err=q("erreurSimu");
+            if(!err)return;
+            err.style.display="block";
+            err.textContent=msg;
+          }
+          function clearError(){
+            const err=q("erreurSimu");
+            if(!err)return;
+            err.style.display="none";
+            err.textContent="";
+          }
+          function track(evt,meta){
+            window.dataLayer=window.dataLayer||[];
+            window.dataLayer.push({event:evt, ...(meta||{}), ts:Date.now()});
+          }
+        
+          /* ================== Defaults + persistence ================== */
+          function initDefaults(){
+            const today=new Date();
+            const oneYearAgo=new Date(today);oneYearAgo.setFullYear(oneYearAgo.getFullYear()-1);
+            const pad=n=>String(n).padStart(2,"0");
+            const toISO=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+            const ids=["dateDebut","dateFin","inflation","allocationPct","performancePct","rendementCash","tresorerie"];
+            if(q("dateDebut") && !q("dateDebut").value)q("dateDebut").value=toISO(oneYearAgo);
+            if(q("dateFin") && !q("dateFin").value)q("dateFin").value=toISO(today);
+            if(q("inflation") && !q("inflation").value)q("inflation").value=2.2;
+            if(q("allocationPct") && !q("allocationPct").value)q("allocationPct").value=3;
+            if(q("performancePct") && !q("performancePct").value)q("performancePct").value=15;
+        
+            ids.forEach(id=>{
+              const el=q(id); if(!el) return;
+              const k="simu_"+id;
+              const v=localStorage.getItem(k);
+              if(v && !el.value) el.value=v;
+              el.addEventListener('input',()=>localStorage.setItem(k, el.value));
+            });
+          }
+        
+          /* ================== Calcul simulateur ================== */
+          function calculerSimulation(){
+            clearError();
+            const t=parseFloat(q("tresorerie").value);
+            const d1=q("dateDebut").value;
+            const d2=q("dateFin").value;
+            const inf=parseFloat(q("inflation").value);
+            const ap=parseFloat(q("allocationPct").value);
+            const rp=parseFloat(q("performancePct").value);
+            const rc=parseFloat(q("rendementCash").value);
+        
+            if(!isFinite(t)||t<=0){showError("Renseignez une trésorerie (en €).");return}
+            if(!d1||!d2){showError("Renseignez la période (dates).");return}
+            if(!isFinite(inf)||inf<0){showError("Renseignez l’inflation annuelle (%).");return}
+            if(!isFinite(ap)||ap<0||ap>100){showError("Renseignez un pourcentage d’allocation valide (0 à 100).");return}
+            if(!isFinite(rp)){showError("Renseignez une hypothèse de performance annuelle (%).");return}
+        
+            const ans=anneesEntre(d1,d2);
+            if(ans<=0){showError("La date d’évaluation doit être postérieure à la date de départ.");return}
+        
+            // Inflation
+            const inflationFactor=puissance(1+inf/100,ans);
+            const valeurReelleCash=t/inflationFactor;
+            const perteInflationEuro=Math.max(0,t-valeurReelleCash);
+            const perteInflationPct=(perteInflationEuro/t)*100;
+        
+            // Stratégie : poche + cash restant
+            const montantPocheInitial=t*(ap/100);
+            const resteCash=t-montantPocheInitial;
+        
+            const perfFactor=puissance(1+rp/100,ans);
+            const valeurPocheFuture=montantPocheInitial*perfFactor;
+        
+            const valeurCashRestantFuture=(isFinite(rc)&&rc>=0)
+              ? resteCash*puissance(1+rc/100,ans)
+              : resteCash;
+        
+            const totalStrategieFuture = valeurPocheFuture + valeurCashRestantFuture;
+        
+            // UI
+            q("perteInflationEuro").textContent=formatEuro(perteInflationEuro);
+            q("perteInflationPct").textContent=formatPct(perteInflationPct);
+            q("valeurPoche").textContent=formatEuro(valeurPocheFuture);
+            q("allocationPctResult").textContent=formatPct(ap);
+            q("perfPctResult").textContent=formatPct(rp);
+        
+            const cashBlock=q("blocCashBanque");
+            if(resteCash>0){
+              q("valeurCashBanque").textContent=formatEuro(valeurCashRestantFuture);
+              cashBlock.style.display="block";
+            } else {
+              cashBlock.style.display="none";
+            }
+        
+            q("totalStrategie").textContent=formatEuro(totalStrategieFuture);
+        
+            const live=q("resultatsBloc");
+            live.setAttribute(
+              "aria-label",
+              `Total projeté ${formatEuro(totalStrategieFuture)} €, dont poche ${formatEuro(valeurPocheFuture)} € et cash restant ${formatEuro(valeurCashRestantFuture)} €.`
+            );
+            live.style.display="grid";
+            live.scrollIntoView({behavior:"smooth",block:"start"});
+        
+            window.__simuData__={
+              tresorerie:t,dateDebut:d1,dateFin:d2,inflation:inf,allocation:ap,performance:rp,rendementCash:rc,
+              perteInflationEuro,perteInflationPct,
+              valeurPocheFuture,valeurCashRestantFuture,totalStrategieFuture
+            };
+        
+            track('update_simulator',{tresorerie:t, allocation:ap});
+          }
+        
+          /* ================== Export CSV ================== */
+          function exporterCSV(){
+            const d=window.__simuData__;
+            if(!d){ alert("Calculez d’abord une simulation."); return; }
+            const rows=[
+              ["Champ","Valeur"],
+              ["Trésorerie", d.tresorerie],
+              ["Date début", d.dateDebut],
+              ["Date fin", d.dateFin],
+              ["Inflation (%)", d.inflation],
+              ["Allocation (%)", d.allocation],
+              ["Perf poche (%)", d.performance],
+              ["Rdt cash restant (%)", isFinite(d.rendementCash)?d.rendementCash:""],
+              ["Perte inflation (€)", Math.round(d.perteInflationEuro)],
+              ["Perte inflation (%)", d.perteInflationPct.toFixed(1)],
+              ["Valeur poche (€)", Math.round(d.valeurPocheFuture)],
+              ["Valeur cash restant (€)", Math.round(d.valeurCashRestantFuture)],
+              ["Total simulé (€)", Math.round(d.totalStrategieFuture)]
+            ];
+            const csv=rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(",")).join("\n");
+            const blob=new Blob([csv],{type:"text/csv;charset=utf-8;"});
+            const url=URL.createObjectURL(blob);
+            const a=document.createElement("a");a.href=url;a.download="simulation_numerion.csv";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+            track('export_csv',{});
+          }
+        
+          /* ================== Impression ================== */
+          function printPack(){
+            if(!q('resultatsBloc') || q('resultatsBloc').style.display==='none'){
+              alert("Calculez d’abord une simulation.");
+              return;
+            }
+            window.print();
+          }
+        
+          /* ================== Bind CTA simulateur ================== */
+          function bindSimulatorButtons(){
+            q('btn-calc')  ?.addEventListener('click', e=>{e.preventDefault(); calculerSimulation();});
+            q('btn-csv')   ?.addEventListener('click', e=>{e.preventDefault(); exporterCSV();});
+            q('btn-print') ?.addEventListener('click', e=>{e.preventDefault(); printPack();});
+          }
+        
+          /* ================== Toggle TTC ================== */
+          function initToggleTTC(){
+            const ttc=q('toggle-ttc'); if(!ttc) return;
+            const TVA=1.20;
+            const fmt=n=>n.toLocaleString('fr-FR');
+            const isNum=n=>!isNaN(n)&&isFinite(n);
+            const thMode=q('th-prix-mode');
+            const labels=$all('.price-label');
+        
+            function updateLabels(isTTC){
+              labels.forEach(l=>{ l.textContent=isTTC?'TTC':'HT'; });
+              if(thMode) thMode.textContent = isTTC ? '(TTC)' : '(HT)';
+              q('tva-hint')?.setAttribute('aria-live','polite');
+            }
+        
+            function update(){
+              const isTTC=ttc.checked;
+              $all('.price-ht').forEach(el=>{
+                const ht=parseFloat(el.getAttribute('data-ht'));
+                if(!isNum(ht)) return;
+                const isPerMonth=(el.textContent||'').includes('/ mois');
+                const val=isTTC?Math.round(ht*TVA):ht;
+                el.textContent=fmt(val)+" €"+(isPerMonth?' / mois':'');
+              });
+              updateLabels(isTTC);
+            }
+        
+            ttc.addEventListener('change',()=>{ update(); track('toggle_ttc',{ttc:ttc.checked}); });
+            update();
+          }
+        
+          /* ================== Smooth anchors ================== */
+          function initSmoothAnchors(){
+            $all('a[href^="#"]').forEach(l=>{
+              l.addEventListener('click',function(e){
+                const cible=document.querySelector(this.getAttribute('href'));
+                if(cible){
+                  e.preventDefault();
+                  cible.scrollIntoView({behavior:"smooth",block:"start"});
+                }
+              });
+            });
+          }
+        
+          /* ================== FORMS — robuste + fallback mailto ================== */
+          (function(){
+            const MAILTO_FALLBACK = "contact@cryptotresorerie.education";
+        
+            function serializeForm(form){
+              const data=new FormData(form);
+              const obj={};
+              data.forEach((v,k)=>{ obj[k]=v });
+              return {data, obj};
+            }
+        
+            function buildMailto(subject, obj){
+              const pairs=Object.entries(obj).map(([k,v])=>`${k}: ${v}`).join('%0A');
+              return `mailto:${MAILTO_FALLBACK}?subject=${encodeURIComponent(subject)}&body=${pairs}`;
+            }
+        
+            function handleFormSubmit(form, statusNodeId){
+              const status=q(statusNodeId);
+              const submitBtn=form.querySelector('button[type="submit"]');
+        
+              form.addEventListener('submit', async (e)=>{
+                e.preventDefault();
+        
+                const email=form.querySelector('input[type="email"]');
+                if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value||'')){
+                  email.setAttribute('aria-invalid','true');
+                  if(status) status.textContent="Email invalide. Exemple : prenom.nom@societe.fr";
+                  email.focus();
+                  return;
+                }
+        
+                const endpoint=form.getAttribute('action')||'';
+                const isFormspree=/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint);
+                const {data, obj}=serializeForm(form);
+                const subject=form.querySelector('input[name="_subject"]')?.value || 'Demande Numérion';
+        
+                if(submitBtn) submitBtn.setAttribute('disabled','true');
+                if(status) status.textContent="Envoi en cours…";
+        
+                // fallback direct si endpoint invalide
+                if(!isFormspree){
+                  if(status) status.textContent="Configuration du formulaire manquante. Ouverture email…";
+                  window.location.href=buildMailto(subject, obj);
+                  track('form_fallback_mailto',{form:form.id});
+                  if(submitBtn) submitBtn.removeAttribute('disabled');
+                  return;
+                }
+        
+                try{
+                  const res=await fetch(endpoint,{
+                    method:'POST',
+                    body:data,
+                    headers:{'Accept':'application/json'},
+                    mode:'cors',
+                    referrerPolicy:'no-referrer'
+                  });
+        
+                  if(res.ok){
+                    if(status) status.textContent="Merci. Nous vous contactons sous 24 h ouvrées.";
+                    form.reset();
+                    track('form_submit_success',{form:form.id});
+                  }else{
+                    const txt=await res.text().catch(()=>null);
+                    if(status) status.textContent="Erreur d’envoi. Ouverture email…";
+                    window.location.href=buildMailto(subject, obj);
+                    track('form_submit_error_then_mailto',{form:form.id,status:res.status,txt});
+                  }
+                }catch(err){
+                  if(status) status.textContent="Réseau indisponible. Ouverture email…";
+                  window.location.href=buildMailto(subject, obj);
+                  track('form_submit_network_then_mailto',{form:form.id});
+                }finally{
+                  if(submitBtn) submitBtn.removeAttribute('disabled');
+                }
+              });
+            }
+        
+            function initForms(){
+              const f1=q('auditForm'); 
+              const f2=q('psanForm');
+              if(f1){ handleFormSubmit(f1,'form-msg'); }
+              if(f2){ handleFormSubmit(f2,'form-msg-psan'); }
+            }
+        
+            window.__initForms__=initForms;
+          })();
+        
+          /* ================== Consentement cookies ================== */
+          function initConsent(){
+            const k="consent_choice_v1";
+            const b=q('consent');
+            if(!b) return;
+            const v=localStorage.getItem(k);
+            if(!v){ b.style.display='block'; }
+            q('consent-accept')?.addEventListener('click',()=>{
+              localStorage.setItem(k,'accept');
+              b.remove();
+              // init analytics ici si besoin
+            });
+            q('consent-deny')  ?.addEventListener('click',()=>{
+              localStorage.setItem(k,'deny');
+              b.remove();
+            });
+          }
+        
+          /* ================== Tracking CTA génériques ================== */
+          function bindCTAs(){
+            $all('#cta-audit-hero, .btn.btn-dark, .btn.btn-green').forEach(el=>{
+              el.addEventListener('click',()=>track('cta_click',{id:el.id||'cta', text:(el.textContent||'').trim()}));
+            });
+          }
+        
+          /* ================== Boot ================== */
+          function boot(){
+            initDefaults();
+            bindSimulatorButtons();
+            initToggleTTC();
+            initSmoothAnchors();
+            if(window.__initForms__) window.__initForms__();
+            initConsent();
+            bindCTAs();
+          }
+        
+          ready(boot);
+          document.addEventListener('super:page:load', boot);
+        })();
+    </script>
 
-    function initForms(){
-      const f1=q('auditForm'); 
-      const f2=q('psanForm');
-      if(f1){ handleFormSubmit(f1,'form-msg'); }
-      if(f2){ handleFormSubmit(f2,'form-msg-psan'); }
-    }
-
-    window.__initForms__=initForms;
-  })();
-
-  /* ================== Consentement cookies ================== */
-  function initConsent(){
-    const k="consent_choice_v1";
-    const b=q('consent');
-    if(!b) return;
-    const v=localStorage.getItem(k);
-    if(!v){ b.style.display='block'; }
-    q('consent-accept')?.addEventListener('click',()=>{ localStorage.setItem(k,'accept'); b.remove(); /* init analytics ici si besoin */ });
-    q('consent-deny')  ?.addEventListener('click',()=>{ localStorage.setItem(k,'deny');   b.remove(); });
-  }
-
-  /* ================== Tracking CTA génériques ================== */
-  function bindCTAs(){
-    $all('#cta-audit-hero, .btn.btn-dark, .btn.btn-green').forEach(el=>{
-      el.addEventListener('click',()=>track('cta_click',{id:el.id||'cta', text:(el.textContent||'').trim()}));
-    });
-  }
-
-  /* ================== Boot ================== */
-  function boot(){
-    initDefaults();
-    bindSimulatorButtons();
-    initToggleTTC();
-    initSmoothAnchors();
-    if(window.__initForms__) window.__initForms__();
-    initConsent();
-    bindCTAs();
-  }
-
-  ready(boot);
-  document.addEventListener('super:page:load', boot);
-})();
-</script>
+<div style="bottom: 10px; right: 10px; position: absolute;"><a href="https://wordtohtml.net/?utm_source=wth_free_link&utm_medium=external" target="_blank" style="font-size:11px; color: #d0d0d0;">Email Signature Editor</a></p>
 </body>
+
 </html>
